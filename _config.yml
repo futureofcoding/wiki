@@ -1,0 +1,14 @@
+theme: jekyll-theme-minimal
+description: 'Future of Coding Wiki<br><a href="./List-of-everything">List of everything</a>'
+title: FoC Wiki
+collections:
+  pages:
+    output: true
+    permalink: /:title
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page

@@ -1,0 +1,10 @@
+---
+title: List of people
+category: list
+hide_date: true
+---
+
+<p>List of people.</p>
+
+{% assign pages = site.pages | where_exp: "item","item.categories contains 'person'" | sort: "title" %}
+{% include list.html pages=pages %}

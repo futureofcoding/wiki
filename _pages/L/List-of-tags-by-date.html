@@ -1,0 +1,14 @@
+---
+title: List of tags by date
+category: list
+hide_date: true
+---
+
+<p>List of tags by date.</p>
+
+{% assign pages_by_month = site.pages | where_exp: "item","item.categories contains 'tag'" | where_exp: "item","item.hide_date != true" | sort: "date" | reverse | group_by_exp: "item","item.date | date: '%Y-%m'" %}
+
+{% for month in pages_by_month %}
+  <h2>{{ month.name }}</h2>
+  {% include list.html pages=month.items %}
+{% endfor %}

@@ -1,0 +1,32 @@
+---
+title: List of everything
+category: list
+hide_date: true
+---
+
+<p>List of everything.</p>
+
+<p>
+  Limit category to:
+  <span class="categories">
+    [<a href="./List-of-lists">list</a>],
+    [<a href="./List-of-people">person</a>],
+    [<a href="./List-of-posts">post</a>],
+    [<a href="./List-of-projects">project</a>],
+    [<a href="./List-of-tags">tag</a>],
+    [<a href="./List-of-teams">team</a>]
+  </span> -
+  sort by:
+  title,
+  <a href="./List-of-everything-by-date">date</a>,
+  <a href="./List-of-everything-by-tag">tag</a>
+</p>
+
+<p>
+</p>
+
+{% assign pages_by_first_letter = site.pages | sort: "title" | group_by_exp: "item","item.title | slice: 0" %}
+{% for letter in pages_by_first_letter %}
+  <h2>{{ letter.name }}</h2>
+  {% include list.html pages=letter.items %}
+{% endfor %}

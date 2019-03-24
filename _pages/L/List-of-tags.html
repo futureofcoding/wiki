@@ -1,0 +1,30 @@
+---
+title: List of tags
+category: list
+hide_date: true
+---
+
+<p>List of tags.</p>
+
+{% assign all_pages = site.pages | sort: "title" %}
+{% assign tag_arrays = all_pages | map: "tags" %}
+{% assign tags = empty %}
+{% for tag_array in tag_arrays %}
+  {% assign tags = tags | concat: tag_array %}
+{% endfor %}
+
+{% assign tag_pages = site.pages | where_exp: "item","item.categories contains 'tag'" | sort: "title" %}
+{% assign tag_page_titles = tag_pages | map: "title" %}
+{% assign tags = tags | uniq | sort | where_exp: "tag","tag.size > 0" %}
+
+{% include list.html pages=tag_pages %}
+
+<h2>Missing tags</h2>
+
+<ul class="item-list">
+{% for tag in tags %}
+  {% unless tag_page_titles contains tag %}
+    <li>{% include ref.html title=tag category='tag' %}</li>
+  {% endunless %}
+{% endfor %}
+</ul>

@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }} <span class="categories">[<span>{{ page.categories | join: "</span>, <span>" }}</span>]</span></h1>
+
+<table>
+
+{% if page.link %}
+  <tr>
+    <td>link</td>
+    <td><a href="{{ page.link }}">{{ page.link }}</a>
+  </tr>
+{% endif %}
+
+{% if page.by %}
+  <tr>
+    <td>by</td>
+    <td>{% include ref.html title=page.by %}</td>
+  </tr>
+{% endif %}
+
+{% if page.categories contains 'post' %}
+  {% assign date_text = "date" %}
+  {% assign date_formatted = page.date | date: "%B %Y" %}
+{% else %}
+  {% if page.categories contains 'person' %}
+    {% assign date_text = "date (years active)" %}
+  {% elsif page.category == "list" or page.category == "tag" %}
+    {% assign date_text = "date (added)" %}
+  {% else %}
+    {% assign date_text = "date" %}
+  {% endif %}
+  {% assign begin_year = page.date | date: "%Y" %}
+  {% assign end_year = page.end_date | date: "%Y" | default: "current" %}
+  {% assign date_formatted = begin_year | append: " - " | append: end_year %}
+{% endif %}
+
+{% unless page.hide_date %}
+  <tr>
+    <td>{{ date_text }}</td>
+    <td>{{ date_formatted }}</td>
+  </tr>
+{% endunless %}
+
+{% unless page.tags == empty %}
+  <tr>
+    <td>tags</td>
+    <td class="tag-list">
+    {% for tag in page.tags %}
+      <span>{% include ref.html title=tag category='tag' %}</span>
+    {% endfor %}
+    </td>
+  </tr>
+{% endunless %}
+
+</table>
+
+{{ content }}
+
+{% if page.categories contains 'tag' %}
+  <h3 id="list-of-tagged-pages">List of pages tagged {{ page.title }}</h3>
+  {% assign pages = site.pages | where_exp: "item","item.tags contains page.title" | sort: "title" %}
+  {% include list.html pages=pages %}
+{% endif %}
+
+<p><a href="{{ site.github.repository_url }}/edit/master/{{ page.path }}">Edit on GitHub</a></p>

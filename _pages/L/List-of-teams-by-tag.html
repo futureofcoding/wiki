@@ -1,0 +1,22 @@
+---
+title: List of teams by tag
+category: list
+hide_date: true
+---
+
+<p>List of teams by tag.</p>
+
+{% assign all_teams = site.pages | where_exp: "item","item.categories contains 'team'" | sort: "title" %}
+{% assign tag_arrays = all_teams | map: "tags" %}
+{% assign tags = empty %}
+{% for tag_array in tag_arrays %}
+  {% assign tags = tags | concat: tag_array %}
+{% endfor %}
+
+{% assign tags = tags | uniq | sort | where_exp: "item","item.size > 0" %}
+
+{% for tag in tags %}
+  <h2>{% include ref.html title=tag category="tag" %}</h2>
+  {% assign pages = all_teams | where_exp: "item","item.tags contains tag" %}
+  {% include list.html pages=pages %}
+{% endfor %}

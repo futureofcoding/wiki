@@ -1,0 +1,22 @@
+---
+title: List of projects by tag
+category: list
+hide_date: true
+---
+
+<p>List of projects by tag.</p>
+
+{% assign all_projects = site.pages | where_exp: "item","item.categories contains 'project'" | sort: "title" %}
+{% assign tag_arrays = all_projects | map: "tags" %}
+{% assign tags = empty %}
+{% for tag_array in tag_arrays %}
+  {% assign tags = tags | concat: tag_array %}
+{% endfor %}
+
+{% assign tags = tags | uniq | sort | where_exp: "item","item.size > 0" %}
+
+{% for tag in tags %}
+  <h2>{% include ref.html title=tag category="tag" %}</h2>
+  {% assign pages = all_projects | where_exp: "item","item.tags contains tag" %}
+  {% include list.html pages=pages %}
+{% endfor %}

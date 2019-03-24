@@ -1,0 +1,65 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+a:hover, a:active, a:focus {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+h1 a:hover, h1 a:active, h1 a:focus {
+  font-weight: bold;
+}
+
+h2 a:hover, h2 a:active, h2 a:focus {
+  font-weight: bold;
+}
+
+a.new {
+  color: #ba0000;
+}
+
+.excerpt a,
+.excerpt a.new {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media print, screen and (min-width: 700px) {
+  section {
+    width: 600px;
+  }
+}
+
+h1 .categories {
+  font-size: 20px;
+  font-weight: normal;
+  color: #727272;
+  position: relative;
+  top: -2px;
+}
+
+.categories span, .categories a {
+  background-color: #f2f2f2;
+}
+
+td:nth-child(2) {
+  min-width: 400px;
+}
+
+ul.item-list p {
+  display: inline;
+}
+
+ul.item-list p::before {
+  content: " - "
+}
+
+.tag-list span::after {
+  content: ", ";
+  margin-left: -2px;
+}
+.tag-list span:last-child::after {
+  content: ""
+}

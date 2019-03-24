@@ -1,0 +1,28 @@
+---
+title: List of lists
+category: list
+hide_date: true
+---
+
+<p>List of lists.</p>
+
+<p>Contents:</p>
+
+<ul class="item-list">
+  <li><a href="#list-of-lists">List of lists</a></li>
+  <li><a href="#list-of-pages-tagged-tag">List of pages tagged &lt;tag&gt;</a></li>
+</ul>
+
+<h2 id="list-of-lists">List of lists</h2>
+
+{% assign pages = site.pages | where_exp: "item","item.categories contains 'list'" | sort: "title" %}
+{% include list.html pages=pages %}
+
+<h2 id="list-of-pages-tagged-tag">List of pages tagged &lt;tag&gt;</h2>
+
+<ul class="item-list">
+{% assign pages = site.pages | where_exp: "item","item.categories contains 'tag'" | sort: "title" %}
+{% for page in pages %}
+  <li><a href=".{{ page.url }}#list-of-tagged-pages">List of pages tagged {{ page.title }}</a></li>
+{% endfor %}
+</ul>

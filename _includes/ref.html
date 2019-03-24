@@ -1,0 +1,2 @@
+{% assign reference = site.pages | where: "title",include.title | first %}{% if reference %}<a href=".{{ reference.url }}">{{ include.title }}</a>{% else %}{% assign name = include.title | slugify | capitalize | append: '.md' %}<a class="new"
+    href="{{ site.github.repository_url }}/new/master/_pages/?filename=_pages%2F{{ name | slice: 0 }}%2F{{ name }}&value=---%0Atitle:%20{{ include.title }}%0Acategory:%20{{ include.category | default: 'list%2Fperson%2Fpost%2Fproject%2Ftag%2Fteam' }}%0Adate:%20{{ site.time | date: '%Y-%m-%d' }}%0A---">{{ include.title }}</a>{% endif %}

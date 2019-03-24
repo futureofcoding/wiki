@@ -1,0 +1,38 @@
+---
+title: List of everything by tag
+category: list
+hide_date: true
+---
+
+<p>List of everything by tag.</p>
+
+<p>
+  Limit category to:
+  <span class="categories">
+    [<a href="./List-of-lists-by-tag">list</a>],
+    [<a href="./List-of-people-by-tag">person</a>],
+    [<a href="./List-of-posts-by-tag">post</a>],
+    [<a href="./List-of-projects-by-tag">project</a>],
+    [<a href="./List-of-tags-by-tag">tag</a>],
+    [<a href="./List-of-teams-by-tag">team</a>]
+  </span> -
+  sort by:
+  <a href="./List-of-everything">title</a>,
+  <a href="./List-of-everything-by-date">date</a>,
+  tag
+</p>
+
+{% assign all_pages = site.pages | sort: "title" %}
+{% assign tag_arrays = all_pages | map: "tags" %}
+{% assign tags = empty %}
+{% for tag_array in tag_arrays %}
+  {% assign tags = tags | concat: tag_array %}
+{% endfor %}
+
+{% assign tags = tags | uniq | sort | where_exp: "item","item.size > 0" %}
+
+{% for tag in tags %}
+  <h2>{% include ref.html title=tag category="tag" %}</h2>
+  {% assign pages = all_pages | where_exp: "item","item.tags contains tag" %}
+  {% include list.html pages=pages %}
+{% endfor %}

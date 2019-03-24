@@ -1,0 +1,5 @@
+<ul class="item-list">
+{% for page in include.pages %}
+  <li><a href=".{{ page.url }}">{{ page.title }}</a> <span class="categories">[<span>{{ page.categories | join: "</span>, <span>" }}</span>]</span><span class="excerpt">{{ page.excerpt }}</span></li>
+{% endfor %}
+</ul>
