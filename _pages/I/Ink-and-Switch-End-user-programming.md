@@ -4,5 +4,5 @@ by: Ink & Switch
 date: 2019-03-20
 link: https://www.inkandswitch.com/end-user-programming.html
 category: post
-tags: [End-user programming, foo]
+tags: [End-user programming]
 ---

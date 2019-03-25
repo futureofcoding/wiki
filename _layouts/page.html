@@ -20,25 +20,17 @@ layout: default
   </tr>
 {% endif %}
 
-{% if page.categories contains 'post' %}
-  {% assign date_text = "date" %}
-  {% assign date_formatted = page.date | date: "%B %Y" %}
-{% else %}
-  {% if page.categories contains 'person' %}
-    {% assign date_text = "date (years active)" %}
-  {% elsif page.category == "list" or page.category == "tag" %}
-    {% assign date_text = "date (added)" %}
-  {% else %}
-    {% assign date_text = "date" %}
-  {% endif %}
-  {% assign begin_year = page.date | date: "%Y" %}
-  {% assign end_year = page.end_date | date: "%Y" | default: "current" %}
-  {% assign date_formatted = begin_year | append: " - " | append: end_year %}
-{% endif %}
-
 {% unless page.hide_date %}
+  {% if page.categories contains 'post' %}
+    {% assign date_formatted = page.date | date: "%B %Y" %}
+  {% else %}
+    {% assign begin_year = page.date | date: "%Y" %}
+    {% assign end_year = page.end_date | date: "%Y" | default: "current" %}
+    {% assign date_formatted = page.date_prefix | append: begin_year | append: " - " | append: end_year %}
+  {% endif %}
+
   <tr>
-    <td>{{ date_text }}</td>
+    <td>date</td>
     <td>{{ date_formatted }}</td>
   </tr>
 {% endunless %}
@@ -53,6 +45,20 @@ layout: default
     </td>
   </tr>
 {% endunless %}
+
+{% if page.twitter %}
+  <tr>
+    <td>twitter</td>
+    <td><a href="https://twitter.com/{{ page.twitter }}">@{{ page.twitter }}</a></td>
+  </tr>
+{% endif %}
+
+{% if page.github %}
+  <tr>
+    <td>github</td>
+    <td><a href="{{ page.github }}">{{ page.github }}</a></td>
+  </tr>
+{% endif %}
 
 </table>
 

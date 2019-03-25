@@ -1,5 +1,25 @@
 <ul class="item-list">
 {% for page in include.pages %}
-  <li><a href=".{{ page.url }}">{{ page.title }}</a> <span class="categories">[<span>{{ page.categories | join: "</span>, <span>" }}</span>]</span><span class="excerpt">{{ page.excerpt }}</span></li>
+  {% if page.categories contains 'post' %}
+    {% assign date_formatted = page.date | date: "%B %Y" %}
+    {% assign date_text = " (" | append: date_formatted | append: ")" %}
+  {% elsif page.end_date %}
+    {% assign begin_year = page.date | date: "%Y" %}
+    {% assign end_year = page.end_date | date: "%Y" %}
+    {% assign date_text = " (" | append: page.date_prefix | append: begin_year | append: " - " | append: end_year | append: ")" %}
+  {% else %}
+    {% assign date_text = "" %}
+  {% endif %}
+
+  {% if page.tags == empty %}
+    {% assign tags_text = "" %}
+  {% else %}
+    {% assign tags_joined = page.tags | join: ", " %}
+    {% assign tags_text = " &lt;" | append: tags_joined | append: "&gt;" %}
+  {% endif %}
+
+  <li>
+    <a href=".{{ page.url }}">{{ page.title }}</a>
+    <span class="categories">[<span>{{ page.categories | join: "</span>, <span>" }}</span>]</span>{{ date_text }}{{ tags_text }}
 {% endfor %}
 </ul>
