@@ -6,6 +6,23 @@ hide_date: true
 
 <p>List of projects by tag.</p>
 
+<p>
+  Limit category to:
+  <a href="./List-of-everything-by-tag">everything</a>,
+  <span class="categories">
+    [<a href="./List-of-lists-by-tag">list</a>],
+    [<a href="./List-of-people-by-tag">person</a>],
+    [<a href="./List-of-posts-by-tag">post</a>],
+    [project],
+    [<a href="./List-of-tags-by-tag">tag</a>],
+    [<a href="./List-of-teams-by-tag">team</a>]
+  </span><br>
+  Sort by:
+  <a href="./List-of-projects">title</a>,
+  <a href="./List-of-projects-by-date">date</a>,
+  tag
+</p>
+
 {% assign all_projects = site.pages | where_exp: "item","item.categories contains 'project'" | sort: "title" %}
 {% assign tag_arrays = all_projects | map: "tags" %}
 {% assign tags = empty %}

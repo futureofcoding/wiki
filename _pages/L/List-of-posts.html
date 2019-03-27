@@ -6,5 +6,22 @@ hide_date: true
 
 <p>List of posts.</p>
 
+<p>
+  Limit category to:
+  <a href="./List-of-everything">everything</a>,
+  <span class="categories">
+    [<a href="./List-of-lists">list</a>],
+    [<a href="./List-of-people">person</a>],
+    [post],
+    [<a href="./List-of-projects">project</a>],
+    [<a href="./List-of-tags">tag</a>],
+    [<a href="./List-of-teams">team</a>]
+  </span><br>
+  Sort by:
+  title,
+  <a href="./List-of-posts-by-date">date</a>,
+  <a href="./List-of-posts-by-tag">tag</a>
+</p>
+
 {% assign pages = site.pages | where_exp: "item","item.categories contains 'post'" | sort: "title" %}
 {% include list.html pages=pages %}

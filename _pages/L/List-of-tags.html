@@ -6,6 +6,23 @@ hide_date: true
 
 <p>List of tags.</p>
 
+<p>
+  Limit category to:
+  <a href="./List-of-everything">everything</a>,
+  <span class="categories">
+    [<a href="./List-of-lists">list</a>],
+    [<a href="./List-of-people">person</a>],
+    [<a href="./List-of-posts">post</a>],
+    [<a href="./List-of-projects">project</a>],
+    [tag],
+    [<a href="./List-of-teams">team</a>]
+  </span><br>
+  Sort by:
+  title,
+  <a href="./List-of-tags-by-date">date</a>,
+  <a href="./List-of-tags-by-tag">tag</a>
+</p>
+
 {% assign all_pages = site.pages | sort: "title" %}
 {% assign tag_arrays = all_pages | map: "tags" %}
 {% assign tags = empty %}

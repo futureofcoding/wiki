@@ -6,6 +6,23 @@ hide_date: true
 
 <p>List of posts by date.</p>
 
+<p>
+  Limit category to:
+  <a href="./List-of-everything-by-date">everything</a>,
+  <span class="categories">
+    [<a href="./List-of-lists-by-date">list</a>],
+    [<a href="./List-of-people-by-date">person</a>],
+    [post],
+    [<a href="./List-of-projects-by-date">project</a>],
+    [<a href="./List-of-tags-by-date">tag</a>],
+    [<a href="./List-of-teams-by-date">team</a>]
+  </span><br>
+  Sort by:
+  <a href="./List-of-posts">title</a>,
+  date,
+  <a href="./List-of-posts-by-tag">tag</a>
+</p>
+
 {% assign pages_by_month = site.pages | where_exp: "item","item.categories contains 'post'" | where_exp: "item","item.hide_date != true" | sort: "date" | reverse | group_by_exp: "item","item.date | date: '%Y-%m'" %}
 
 {% for month in pages_by_month %}
