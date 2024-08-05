@@ -1,0 +1,35 @@
+This file lists the replacement rules we use when processing markdown files.
+Any line that includes an arrow will use the regex on the left of the arrow
+to look for matches, and replace them with the html fragment on the right.
+
+Header
+1-4 hashes (#), optionally some spaces, then anything except newline
+#{1}\s*([^\n]+) → <h1>$1</h1>
+#{2}\s*([^\n]+) → <h2>$1</h2>
+#{3}\s*([^\n]+) → <h3>$1</h3>
+#{4}\s*([^\n]+) → <h4>$1</h4>
+
+ul
+A newline, a dash (-), optional spaces, then
+([^\n]+)(\+)([^\n]+) → <ul><li>$3</li></ul>
+
+paragraph
+([^\n]+\n\s*\n) → <p>$1</p>
+
+strong
+\*\*\s*([^\n]+)\*\* → <strong>$1</strong>
+__([^_]+)__ → <strong>$1</strong>
+
+emphasis
+\*\s*([^\n]+?)\* → <em>$1</em>
+_([^_]+?)_ → <em>$1</em>
+
+code
+(`)(\s*[^\n,]+\s*)(`) → <code>$2</code>
+(```)(.*?)(```) → <pre><code>$2</code></pre>
+
+link
+\[([^\]]+)\]\(([^)]+)\) → <a href="$2">$1</a>
+
+image
+!\[([^\]]+)\]\(([^)]+)\) → <img src="$2" alt="$1">

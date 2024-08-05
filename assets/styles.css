@@ -1,0 +1,219 @@
+*, *:before, *:after {
+  /* Use the box model that should have been the default all along. */
+  box-sizing: border-box;
+
+  /* A nice-looking transition when switching themes. */
+  transition: .3s .3s color linear;
+  transition: .3s background-color linear;
+}
+
+
+:root {
+  /* Colors */
+  --white: #fff;
+  --off-white: #f5faf8;
+  --green: hsl(160, 100%, 40%);
+  --mid-green: hsl(160, 100%, 10%);
+  --dark-green: hsl(160, 100%, 5%);
+  --off-black: hsl(160, 100%, 3%);
+  --grey: hsl(210, 12%, 16%);
+  --blue: hsl(160, 100%, 30%);
+
+  /* Light theme */
+  --text-color: var(--grey);
+  --link-color: var(--blue);
+  --page-bg: var(--off-white);
+  --main-bg: var(--white);
+  --button-bg: var(--grey);
+  --link-hover: var(--off-white);
+
+  /* Dark theme */
+  @media (prefers-color-scheme: dark) {
+    --text-color: var(--off-white);
+    --link-color: var(--green);
+    --page-bg: var(--off-black);
+    --main-bg: var(--dark-green);
+    --button-bg: var(--mid-green);
+    --link-hover: var(--off-black);
+  }
+
+  /* Responsive vars */
+  --pad: min(2.6vw, 2em);
+  --half-pad: calc(var(--pad) * 0.5);
+}
+
+html {
+  font-family: system-ui;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+  background: var(--page-bg);
+}
+
+body {
+  display: grid;
+  margin: var(--pad);
+
+  /* On wide screens, the header is like a sidebar */
+  @media(width >= 800px) {
+    grid-template-areas:
+      "header main"
+      "footer footer";
+  }
+
+  /* On narrow screens, everything is a column */
+  @media(width < 800px) {
+    grid-template-areas:
+      "header"
+      "main"
+      "footer";
+  }
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  padding: var(--pad);
+  gap: var(--half-pad); /* Space around the edit button */
+  background: var(--main-bg);
+
+  @media(width >= 800px) {
+    justify-self: end; /* Butt header up against main */
+    grid-template-areas: /* Simple column layout */
+      "logo"
+      "edit"
+      "nav";
+    align-content: start; /* Pull children up the top */
+  }
+
+  @media(width < 800px) {
+    grid-template-areas: /* Logo on the left, edit and nav on the right */
+      "logo edit"
+      "logo nav";
+    grid-template-rows: max-content; /* Pull edit up to the top */
+    text-align: right;
+  }
+
+  a.logo {
+    grid-area: logo;
+    display: block;
+    aspect-ratio: 1;
+    width: 12em;
+
+    @media(width < 800px) {
+      width: 9em;
+    }
+
+    &:focus {
+      outline-color: var(--text-color);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .edit {
+    grid-area: edit;
+    display: inline-block;
+    padding: var(--half-pad) var(--pad);
+    text-align: center;
+    color: white;
+    text-decoration: none;
+
+    &, &:hover, &:active, &:focus {
+      background: var(--button-bg);;
+    }
+
+    @media(width < 800px) {
+      place-self: end;
+    }
+
+    &:focus {
+      outline-color: var(--green);
+    }
+
+  }
+
+  nav {
+    grid-area: nav;
+    display: flex;
+    flex-flow: column;
+
+    a {
+      @media(width >= 800px) {
+        padding: .4em var(--half-pad);
+      }
+
+      @media(width < 800px) {
+        align-self: end; /* Shrink the tappable area to just around the text */
+        padding: var(--half-pad) var(--pad);
+      }
+    }
+  }
+}
+
+main {
+  grid-area: main;
+  max-width: calc(56em + var(--pad));
+  padding: var(--pad);
+  padding-left: 0;
+  background: var(--main-bg);
+
+  @media(width < 800px){
+    padding: var(--pad);
+  }
+}
+
+footer {
+  grid-area: footer;
+  margin-top: var(--pad);
+  text-align: center;
+  text-wrap: balance;
+
+  .cc0 {
+    img {
+      height: auto;
+      margin-left: 3px;
+      vertical-align: text-bottom;
+      @media (prefers-color-scheme: dark) {
+        filter: invert(100%);
+      }
+    }
+  }
+}
+
+/* The tab title doubles as the page title */
+title {
+  display: block;
+  font-size: 3em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+h1, h2 {
+  border-bottom: 2px solid currentcolor;
+}
+
+img {
+  vertical-align: middle; /* Remove an ugly space under images */
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: outline .1s linear;
+}
+
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: solid 3px var(--link-color);
+}
+
+a:hover, a:active, a:focus {
+  background: var(--link-hover);
+}

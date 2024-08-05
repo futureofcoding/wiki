@@ -1,0 +1,6 @@
+.DS_Store
+public
+Cakefile
+node_modules
+package.json
+package-lock.json
