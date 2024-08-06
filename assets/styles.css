@@ -55,14 +55,14 @@ body {
   margin: var(--pad);
 
   /* On wide screens, the header is like a sidebar */
-  @media(width >= 800px) {
+  @media(min-width: 801px) {
     grid-template-areas:
       "header main"
       "footer footer";
   }
 
   /* On narrow screens, everything is a column */
-  @media(width < 800px) {
+  @media(max-width: 800px) {
     grid-template-areas:
       "header"
       "main"
@@ -77,7 +77,7 @@ header {
   gap: var(--half-pad); /* Space around the edit button */
   background: var(--main-bg);
 
-  @media(width >= 800px) {
+  @media(min-width: 801px) {
     justify-self: end; /* Butt header up against main */
     grid-template-areas: /* Simple column layout */
       "logo"
@@ -86,7 +86,7 @@ header {
     align-content: start; /* Pull children up the top */
   }
 
-  @media(width < 800px) {
+  @media(max-width: 800px) {
     grid-template-areas: /* Logo on the left, edit and nav on the right */
       "logo edit"
       "logo nav";
@@ -100,7 +100,7 @@ header {
     aspect-ratio: 1;
     width: 12em;
 
-    @media(width < 800px) {
+    @media(max-width: 800px) {
       width: 9em;
     }
 
@@ -126,7 +126,7 @@ header {
       background: var(--button-bg);;
     }
 
-    @media(width < 800px) {
+    @media(max-width: 800px) {
       place-self: end;
     }
 
@@ -142,11 +142,11 @@ header {
     flex-flow: column;
 
     a {
-      @media(width >= 800px) {
+      @media(min-width: 801px) {
         padding: .4em var(--half-pad);
       }
 
-      @media(width < 800px) {
+      @media(max-width: 800px) {
         align-self: end; /* Shrink the tappable area to just around the text */
         padding: var(--half-pad) var(--pad);
       }
@@ -161,7 +161,7 @@ main {
   padding-left: 0;
   background: var(--main-bg);
 
-  @media(width < 800px){
+  @media(max-width: 800px){
     padding: var(--pad);
   }
 }
