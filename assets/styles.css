@@ -3,17 +3,16 @@
   box-sizing: border-box;
 
   /* A nice-looking transition when switching themes. */
-  transition: .3s .3s color linear;
-  transition: .3s background-color linear;
+  transition: .1s color linear, .3s background-color linear, .3s border-color linear;
 }
 
 
 :root {
   /* Colors */
   --white: #fff;
-  --off-white: #f5faf8;
+  --off-white: hsl(160, 30%, 97%);
   --green: hsl(160, 100%, 40%);
-  --mid-green: hsl(160, 100%, 10%);
+  --mid-green: hsl(160, 100%, 30%);
   --dark-green: hsl(160, 100%, 5%);
   --off-black: hsl(160, 100%, 3%);
   --grey: hsl(210, 12%, 16%);
@@ -24,8 +23,9 @@
   --link-color: var(--blue);
   --page-bg: var(--off-white);
   --main-bg: var(--white);
-  --button-bg: var(--grey);
+  --button-bg: var(--green);
   --link-hover: var(--off-white);
+  --underline: var(--grey);
 
   /* Dark theme */
   @media (prefers-color-scheme: dark) {
@@ -33,12 +33,13 @@
     --link-color: var(--green);
     --page-bg: var(--off-black);
     --main-bg: var(--dark-green);
-    --button-bg: var(--mid-green);
+    --button-bg: var(--green);
     --link-hover: var(--off-black);
+    --underline: var(--off-white);
   }
 
   /* Responsive vars */
-  --pad: min(2.6vw, 2em);
+  --pad: min(2.6vw, 2rem);
   --half-pad: calc(var(--pad) * 0.5);
 }
 
@@ -47,22 +48,25 @@ html {
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
-  background: var(--page-bg);
+  background-color: var(--page-bg);
 }
 
 body {
   display: grid;
-  margin: var(--pad);
 
-  /* On wide screens, the header is like a sidebar */
   @media(min-width: 801px) {
+    margin: var(--pad) var(--pad) 0;
+
+    /* On wide screens, the header is like a sidebar */
     grid-template-areas:
       "header main"
       "footer footer";
   }
 
-  /* On narrow screens, everything is a column */
   @media(max-width: 800px) {
+    margin: 0;
+
+    /* On narrow screens, everything is a column */
     grid-template-areas:
       "header"
       "main"
@@ -101,7 +105,7 @@ header {
     width: 12em;
 
     @media(max-width: 800px) {
-      width: 9em;
+      width: calc(6em + 10vw);
     }
 
     &:focus {
@@ -117,8 +121,10 @@ header {
   .edit {
     grid-area: edit;
     display: inline-block;
-    padding: var(--half-pad) var(--pad);
+    padding: var(--half-pad);
+    border-bottom: 5px solid var(--mid-green);
     text-align: center;
+    font-weight: bold;
     color: white;
     text-decoration: none;
 
@@ -128,12 +134,24 @@ header {
 
     @media(max-width: 800px) {
       place-self: end;
+      padding: var(--half-pad) var(--pad);
+      border-bottom-width: 3px;
     }
 
     &:focus {
       outline-color: var(--green);
     }
 
+    span {
+      display: inline-block;
+      font-size: 1.4em;
+      line-height: 0;
+      margin-left: -.9em;
+
+      @media(max-width: 800px) {
+        display: none;
+      }
+    }
   }
 
   nav {
@@ -152,6 +170,24 @@ header {
       }
     }
   }
+
+  section {
+    max-width: 11em;
+
+    @media(max-width: 800px) {
+      display: none;
+    }
+
+    h1 {
+      margin: var(--pad) 0 var(--half-pad);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      padding-left: 1em;
+    }
+  }
 }
 
 main {
@@ -168,18 +204,21 @@ main {
 
 footer {
   grid-area: footer;
-  margin-top: var(--pad);
+  padding: var(--pad) 0 1em;
   text-align: center;
   text-wrap: balance;
 
   .cc0 {
     img {
       height: auto;
-      margin-left: 3px;
-      vertical-align: text-bottom;
-      @media (prefers-color-scheme: dark) {
-        filter: invert(100%);
-      }
+      margin-left: .15em;
+      vertical-align: -.3em;
+    }
+  }
+
+  .initials {
+    img {
+      border-radius: 40px;
     }
   }
 }
@@ -187,6 +226,8 @@ footer {
 /* The tab title doubles as the page title */
 title {
   display: block;
+  padding-bottom: .2em;
+  border-bottom: 5px solid var(--underline);
   font-size: 3em;
   line-height: 1.1;
   text-wrap: balance;
@@ -216,4 +257,8 @@ a:focus {
 
 a:hover, a:active, a:focus {
   background: var(--link-hover);
+}
+
+ul {
+  list-style-type: square;
 }
