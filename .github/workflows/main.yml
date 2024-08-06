@@ -12,4 +12,4 @@ jobs:
         with:
           node-version: '22'
       - run: npm i -g coffeescript
-      - run: coffee scripts/build.coffee
+      - run: coffee build/build.coffee
