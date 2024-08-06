@@ -2,14 +2,16 @@ on:
   push:
     branches:
       - main
-
 jobs:
   build:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
       - run: npm i -g coffeescript
       - run: coffee build/build.coffee
+      - uses: actions/upload-pages-artifact
+        with:
+          path: "public/"
