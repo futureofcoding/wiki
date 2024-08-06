@@ -2,8 +2,15 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 jobs:
   build:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,3 +22,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: "public/"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
