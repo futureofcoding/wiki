@@ -12,6 +12,6 @@ jobs:
           node-version: '22'
       - run: npm i -g coffeescript
       - run: coffee build/build.coffee
-      - uses: actions/upload-pages-artifact
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: "public/"
