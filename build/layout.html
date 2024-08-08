@@ -10,19 +10,26 @@
   <main>
 
     <header>
-
-      <a class="logo" href="/">
-        <img alt="Future of Coding" width="280" height="75" src="/wiki.svg">
+      <a id="logo" href="/">
+        <img alt="Future of Coding" width="300" height="300" src="/wiki.svg">
       </a>
-
       <nav>
-        <a class="edit" href="https://github.com/futureofcoding/wiki/edit/main/{{path}}"><span>✎</span> Edit This Page</a>
+        <a id="edit" href="https://github.com/futureofcoding/wiki/edit/main/{{path}}">
+          <span>Edit This Page</span>
+          <img width="20" height="20" src="/edit.svg" alt="">
+        </a>
         <a href="/">Home</a>
         <a href="/">Categories</a>
         <a href="/">List of All Pages</a>
       </nav>
+    </header>
 
-      <section id="contributors">
+    <article>
+      {{page}}
+    </article>
+
+    <aside>
+      <section>
         <h1>Contributors</h1>
         <ul>
           <li>Ivan Reese</li>
@@ -30,8 +37,7 @@
           <li>Third Person</li>
         </ul>
       </section>
-
-      <section id="backlinks">
+      <section>
         <h1>Backlinks</h1>
         <ul>
           <li><a href="">Some other page</a></li>
@@ -39,12 +45,7 @@
           <li><a href="">title</a></li>
         </ul>
       </section>
-
-    </header>
-
-    <article>
-      {{page}}
-    </article>
+    </aside>
 
   </main>
 
@@ -63,5 +64,6 @@
       <img alt="" width="40" height="40" src="/initials.svg">
     </a>
   </footer>
+
 </body>
 </html>
