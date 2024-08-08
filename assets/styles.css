@@ -12,8 +12,8 @@
   --light-grey: hsl(160, 10%, 85%);
   --green: hsl(160, 100%, 40%);
   --mid-green: hsl(160, 100%, 30%);
-  --dark-green: hsl(160, 50%, 8%);
-  --dark-grey: hsl(160, 12%, 16%);
+  --dark-green: hsl(160, 30%, 10%);
+  --dark-grey: hsl(160, 40%, 16%);
   --off-black: hsl(160, 50%, 4%);
 
   /* Light theme */
@@ -255,7 +255,7 @@ title {
   display: block;
   padding-bottom: .2em;
   border-bottom: 3px solid currentcolor;
-  font-size: 3em;
+  font-size: clamp(2em, 6vw, 3em);
   font-weight: 300;
   line-height: 1.1;
   text-wrap: balance;
