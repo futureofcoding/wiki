@@ -49,7 +49,7 @@
 @media(max-width: 800px) {
   :root {
     --logo-width: 8em;
-    --nav-a-pad: .25em;
+    --nav-a-pad: .15em;
   }
 }
 
@@ -98,12 +98,12 @@ main {
 header {
   grid-area: header;
   display: flex;
-  gap: var(--half-pad);
 }
 
 @media(min-width: 801px) { /* Wide layout */
   header {
     flex-flow: column;
+    gap: var(--half-pad);
   }
 }
 
@@ -145,7 +145,7 @@ nav a {
 @media(max-width: 800px) { /* Narrow layout */
   nav a {
     align-self: end; /* Shrink the tappable area to just around the text */
-    padding: var(--nav-a-pad) var(--pad);
+    padding: var(--nav-a-pad) var(--half-pad);
   }
 }
 
@@ -159,7 +159,7 @@ nav a:focus {
   display: flex;
   justify-content: space-between;
   gap: .5em;
-  margin: 0 0 var(--nav-a-pad);
+  margin: var(--nav-a-pad) 0 0;
   border-bottom: 5px solid var(--mid-green);
   color: white;
   text-decoration: none;
@@ -174,8 +174,8 @@ nav a:focus {
 
 @media(max-width: 800px) {
   #edit {
-    padding: .4em var(--pad) .3em;
-    border-bottom-width: 3px;
+    padding: .4em var(--half-pad) .3em;
+    border-bottom-width: 4px;
   }
 }
 
@@ -190,11 +190,6 @@ nav a:focus {
   }
 }
 
-@media(max-width: 350px) {
-  #edit img {
-    display: none;
-  }
-}
 
 aside {
   grid-area: aside;
