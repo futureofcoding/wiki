@@ -1,234 +1,248 @@
-*, *:before, *:after {
-  /* Use the box model that should have been the default all along. */
-  box-sizing: border-box;
+/* RESET & VARS */
 
-  /* A nice-looking transition when switching themes. */
-  transition: .1s color linear, .3s background-color linear, .3s border-color linear;
-}
-
+*, *:before, *:after { box-sizing: border-box; }
 
 :root {
+  /* Sizes and spacing */
+  --logo-width: 12em;
+  --pad: 2.6vw; /* Fallback for browsers that don't have min() */
+  --pad: min(2.6vw, 2rem);
+  --half-pad: calc(var(--pad) * 0.5);
+
   /* Colors */
   --white: #fff;
   --off-white: hsl(160, 30%, 97%);
   --green: hsl(160, 100%, 40%);
   --mid-green: hsl(160, 100%, 30%);
-  --dark-green: hsl(160, 100%, 5%);
-  --off-black: hsl(160, 100%, 3%);
-  --grey: hsl(210, 12%, 16%);
+  --dark-green: hsl(160, 50%, 8%);
+  --off-black: hsl(160, 50%, 4%);
+
+  --light-grey: hsl(160, 10%, 85%);
+  --dark-grey: hsl(210, 12%, 16%);
   --blue: hsl(160, 100%, 30%);
 
   /* Light theme */
-  --text-color: var(--grey);
+  --text-color: var(--dark-grey);
   --link-color: var(--blue);
   --page-bg: var(--off-white);
   --main-bg: var(--white);
   --button-bg: var(--green);
   --link-hover: var(--off-white);
-  --underline: var(--grey);
+  --shadow: #00000008;
+}
 
-  /* Dark theme */
-  @media (prefers-color-scheme: dark) {
-    --text-color: var(--off-white);
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: var(--light-grey);
     --link-color: var(--green);
     --page-bg: var(--off-black);
     --main-bg: var(--dark-green);
     --button-bg: var(--green);
     --link-hover: var(--off-black);
-    --underline: var(--off-white);
+    --shadow: #000;
   }
-
-  /* Responsive vars */
-  --pad: min(2.6vw, 2rem);
-  --half-pad: calc(var(--pad) * 0.5);
 }
 
-html {
-  font-family: system-ui;
+/* MAJOR LAYOUT ELEMENTS */
+
+body {
+  margin: 0;
+  text-align: center;
   font-size: 16px;
   line-height: 1.5;
+  font-family: system-ui, sans-serif;
   color: var(--text-color);
   background-color: var(--page-bg);
 }
 
-body {
-  display: grid;
+main {
+  display: inline-flex;
+  text-align: left;
+  box-shadow: 0 0 1em var(--shadow);
+}
 
-  @media(min-width: 801px) {
+@media(min-width: 801px) {
+  main {
+    flex-flow: row;
     margin: var(--pad) var(--pad) 0;
-
-    /* On wide screens, the header is like a sidebar */
-    grid-template-areas:
-      "header main"
-      "footer footer";
+    border-radius: 3px;
+    overflow: hidden; /* needed for border-radius */
   }
+}
 
-  @media(max-width: 800px) {
-    margin: 0;
-
-    /* On narrow screens, everything is a column */
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
+@media(max-width: 800px) {
+  main {
+    flex-flow: column;
   }
 }
 
 header {
-  grid-area: header;
-  display: grid;
+  flex: 0 0 auto;
+  display: flex;
+  flex-flow: column;
   padding: var(--pad);
-  gap: var(--half-pad); /* Space around the edit button */
   background: var(--main-bg);
+}
 
-  @media(min-width: 801px) {
-    justify-self: end; /* Butt header up against main */
-    grid-template-areas: /* Simple column layout */
-      "logo"
-      "edit"
-      "nav";
-    align-content: start; /* Pull children up the top */
-  }
-
-  @media(max-width: 800px) {
-    grid-template-areas: /* Logo on the left, edit and nav on the right */
-      "logo edit"
-      "logo nav";
-    grid-template-rows: max-content; /* Pull edit up to the top */
+@media(max-width: 800px) {
+  header {
     text-align: right;
-  }
-
-  a.logo {
-    grid-area: logo;
-    display: block;
-    aspect-ratio: 1;
-    width: 12em;
-
-    @media(max-width: 800px) {
-      width: calc(6em + 10vw);
-    }
-
-    &:focus {
-      outline-color: var(--text-color);
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-    }
-  }
-
-  .edit {
-    grid-area: edit;
-    display: inline-block;
-    padding: var(--half-pad);
-    border-bottom: 5px solid var(--mid-green);
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-
-    &, &:hover, &:active, &:focus {
-      background: var(--button-bg);;
-    }
-
-    @media(max-width: 800px) {
-      place-self: end;
-      padding: var(--half-pad) var(--pad);
-      border-bottom-width: 3px;
-    }
-
-    &:focus {
-      outline-color: var(--green);
-    }
-
-    span {
-      display: inline-block;
-      font-size: 1.4em;
-      line-height: 0;
-      margin-left: -.9em;
-
-      @media(max-width: 800px) {
-        display: none;
-      }
-    }
-  }
-
-  nav {
-    grid-area: nav;
-    display: flex;
-    flex-flow: column;
-
-    a {
-      @media(min-width: 801px) {
-        padding: .4em var(--half-pad);
-      }
-
-      @media(max-width: 800px) {
-        align-self: end; /* Shrink the tappable area to just around the text */
-        padding: var(--half-pad) var(--pad);
-      }
-    }
-  }
-
-  section {
-    max-width: 11em;
-
-    @media(max-width: 800px) {
-      display: none;
-    }
-
-    h1 {
-      margin: var(--pad) 0 var(--half-pad);
-    }
-
-    ul {
-      margin: 0;
-      padding: 0;
-      padding-left: 1em;
-    }
+    flex-flow: row;
+    justify-content: space-between;
   }
 }
 
-main {
-  grid-area: main;
+header a.logo {
+  display: inline-block;
+  width: var(--logo-width);
+  aspect-ratio: 1;
+}
+
+@media(max-width: 800px) {
+  header a.logo {
+    width: calc(6em + 10vw);
+  }
+}
+
+header a.logo:focus {
+  outline-color: var(--text-color);
+}
+
+header a.logo img {
+  width: 100%;
+  height: auto;
+}
+
+header .edit {
+  display: inline-block;
+  margin: var(--half-pad) 0;
+  padding: var(--half-pad);
+  border-bottom: 5px solid var(--mid-green);
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+header .edit,
+header .edit:hover,
+header .edit:active,
+header .edit:focus {
+  background: var(--button-bg);
+}
+
+header .edit:focus {
+  outline-color: var(--text-color);
+}
+
+@media(max-width: 800px) {
+  header .edit {
+    padding: var(--half-pad) var(--pad);
+    border-bottom-width: 3px;
+    margin: 0;
+  }
+}
+
+header .edit span {
+  display: inline-block;
+  font-size: 1.4em;
+  line-height: 0;
+  margin-left: -.9em;
+}
+
+@media(max-width: 800px) {
+  header .edit {
+    display: none;
+  }
+}
+
+header nav {
+  display: inline-flex;
+  flex-flow: column;
+  font-weight: 700;
+}
+
+header nav a:hover,
+header nav a:active,
+header nav a:focus {
+  background: var(--link-hover);
+}
+
+@media(min-width: 801px) {
+  header nav a {
+    padding: .4em var(--half-pad);
+  }
+}
+
+@media(max-width: 800px) {
+  header nav a {
+    align-self: end; /* Shrink the tappable area to just around the text */
+    padding: var(--half-pad) var(--pad);
+  }
+}
+
+header section {
+  width: var(--logo-width);
+}
+
+@media(max-width: 800px) {
+  header section { display: none; }
+}
+
+header section h1 {
+  margin: var(--pad) 0 .5rem;
+}
+
+header section ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+}
+
+article {
+  flex: 0 1 auto;
   max-width: calc(56em + var(--pad));
   padding: var(--pad);
   padding-left: 0;
   background: var(--main-bg);
+}
 
-  @media(max-width: 800px){
-    padding: var(--pad);
-  }
+@media(max-width: 800px) {
+  article { padding: var(--pad); }
 }
 
 footer {
-  grid-area: footer;
-  padding: var(--pad) 0 1em;
-  text-align: center;
+  padding: 0 0 1em;
   text-wrap: balance;
-
-  .cc0 {
-    img {
-      height: auto;
-      margin-left: .15em;
-      vertical-align: -.3em;
-    }
-  }
-
-  .initials {
-    img {
-      border-radius: 40px;
-    }
-  }
+  font-weight: 200;
 }
 
+footer .cc0 img {
+  height: auto;
+  margin-left: .15em;
+  vertical-align: -.3em;
+}
+
+footer .initials {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  overflow: hidden;
+  &:focus { outline-color: var(--text-color); }
+}
+
+/* MINOR ELEMENTS */
+
 /* The tab title doubles as the page title */
+/* This angers the validator, but 🤞 seems fine */
 title {
   display: block;
   padding-bottom: .2em;
-  border-bottom: 5px solid var(--underline);
+  border-bottom: 3px solid currentcolor;
   font-size: 3em;
+  font-weight: 300;
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -237,27 +251,23 @@ h1, h2 {
   border-bottom: 2px solid currentcolor;
 }
 
+h1, h2, h3 {
+  font-weight: 300;
+}
+
 img {
-  vertical-align: middle; /* Remove an ugly space under images */
+  vertical-align: middle; /* Don't add space under images */
 }
 
 a {
   color: var(--link-color);
   text-decoration: none;
   transition: outline .1s linear;
+  border-radius: 1px; /* This rounds the corner of the focus outline */
+  contain: content; /* Make corners consistent, even when the link contains an image */
 }
-
-a:hover, a:active {
-  text-decoration: underline;
-}
-
-a:focus {
-  outline: solid 3px var(--link-color);
-}
-
-a:hover, a:active, a:focus {
-  background: var(--link-hover);
-}
+a:hover, a:active { text-decoration: underline; }
+a:focus { outline: solid 3px var(--link-color); }
 
 ul {
   list-style-type: square;

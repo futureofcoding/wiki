@@ -6,36 +6,48 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header>
-    <a class="logo" href="/">
-      <img alt="Future of Coding" width="280" height="75" src="/wiki.svg">
-    </a>
-    <a class="edit" href="https://github.com/futureofcoding/wiki/edit/main/{{path}}"><span>✎</span> Edit This Page</a>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/">Categories</a>
-      <a href="/">List of All Pages</a>
-    </nav>
-    <section id="contributors">
-      <h1>Contributors</h1>
-      <ul>
-        <li>Ivan Reese</li>
-        <li>Reealllllly Looooong Nameeeeeeeee</li>
-        <li>Third Person</li>
-      </ul>
-    </section>
-    <section id="backlinks">
-      <h1>Backlinks</h1>
-      <ul>
-        <li><a href="">Some other page</a></li>
-        <li><a href="">Some other page with a really long title</a></li>
-        <li><a href="">title</a></li>
-      </ul>
-    </section>
-  </header>
+
   <main>
-    {{page}}
+
+    <header>
+
+      <a class="logo" href="/">
+        <img alt="Future of Coding" width="280" height="75" src="/wiki.svg">
+      </a>
+
+      <nav>
+        <a class="edit" href="https://github.com/futureofcoding/wiki/edit/main/{{path}}"><span>✎</span> Edit This Page</a>
+        <a href="/">Home</a>
+        <a href="/">Categories</a>
+        <a href="/">List of All Pages</a>
+      </nav>
+
+      <section id="contributors">
+        <h1>Contributors</h1>
+        <ul>
+          <li>Ivan Reese</li>
+          <li>Reealllllly Looooong Nameeeeeeeee</li>
+          <li>Third Person</li>
+        </ul>
+      </section>
+
+      <section id="backlinks">
+        <h1>Backlinks</h1>
+        <ul>
+          <li><a href="">Some other page</a></li>
+          <li><a href="">Some other page with a really long title</a></li>
+          <li><a href="">title</a></li>
+        </ul>
+      </section>
+
+    </header>
+
+    <article>
+      {{page}}
+    </article>
+
   </main>
+
   <footer>
     <p class="cc0">
       This wiki is dedicated to the public domain, marked with
