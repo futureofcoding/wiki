@@ -1,8 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Artboard</title>
-    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polyline id="Path" stroke="#FFFFFF" stroke-width="4" points="26 11 28 13 28 30 6 30 6 4 19 4 21 6"></polyline>
-        <polygon id="Rectangle" fill="#FFFFFF" transform="translate(21.75, 10.25) rotate(-45) translate(-21.75, -10.25)" points="14.3253788 8.12867966 34.1243687 8.12867966 34.1243687 12.3713203 14.3253788 12.3713203 9.37563133 10.25"></polygon>
-    </g>
-</svg>
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none"><path stroke="#000b" stroke-width="4" d="M26 11l2 2v17H6V4h13l2 2"/><path fill="#000b" d="M15 14L29 0l3 3-14 14-5 2z"/></svg>
