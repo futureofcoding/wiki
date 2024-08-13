@@ -22,6 +22,9 @@
   --link-color: var(--mid-green);
   --nav-link-hover-bg: hsl(160, 50%, 90%);
   --nav-link-border: hsl(160, 40%, 80%);
+  --edit-link-color: var(--deep-green);
+  --edit-link-bg: var(--green);
+  --edit-link-border: #0003;
 }
 
 /* Dark theme */
@@ -34,13 +37,32 @@
     --link-color: var(--green);
     --nav-link-hover-bg: var(--dark-grey);
     --nav-link-border: #0003;
+    --edit-link-color: var(--deep-green);
+    --edit-link-bg: var(--green);
+    --edit-link-border: #0003;
   }
 }
+
+/* Colorful theme */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --page-bg: hsl(160, 20%, 4%);
+    --main-bg: hsl(240, 20%, 9%);
+    --main-shadow: #000;
+    --text-color: hsl(160, 30%, 90%);
+    --link-color: hsl(38, 100%, 50%);
+    --nav-link-hover-bg: hsl(220, 50%, 15%);
+    --nav-link-border: #0003;
+    --edit-link-color: hsl(160, 0%, 100%);
+    --edit-link-bg: hsl(220, 70%, 40%);
+    --edit-link-border: #0003;
+  }
+} */
 
 /* Wide layout */
 @media(min-width: 801px) {
   :root {
-    --logo-width: 12em;
+    --logo-width: 11em;
   }
 }
 
@@ -73,7 +95,7 @@ main {
     grid-template-columns: var(--logo-width) auto; /* Set the header/aside width */
     gap: var(--pad);
     margin: var(--pad);
-    border-radius: 2px;
+    border-radius: 3px;
   }
 }
 
@@ -111,7 +133,7 @@ header {
 
 @media(max-width: 800px) {
   #logo {
-    width: 10em;
+    width: clamp(5em, 25vw, 10em);
   }
 }
 
@@ -119,7 +141,7 @@ header {
   width: 100%;
   height: auto;
   border-radius: 1px; /* For consistency with <a> style */
-  border-bottom: 5px solid var(--mid-green);
+  border-bottom: 5px solid var(--edit-link-border);
   background: var(--green);
 }
 
@@ -132,18 +154,19 @@ nav {
 nav a {
   border-bottom: 5px solid transparent;
   font-weight: 700;
+  font-size: 0.9em;
 }
 
 @media(min-width: 801px) { /* Wide layout */
   nav a {
-    padding: .7em 1em .5em;
+    padding: .7rem 1rem .5rem;
   }
 }
 
 @media(max-width: 800px) { /* Narrow layout */
   nav a {
     align-self: end; /* Shrink the tappable area to just around the text */
-    padding: .4em .6em .3em;
+    padding: .4rem .6rem .3rem;
     border-bottom-width: 4px;
   }
 }
@@ -159,11 +182,12 @@ nav a:focus {
 #edit {
   display: flex;
   justify-content: space-between;
-  gap: .5em;
+  align-items: center;
+  gap: .5rem;
   margin-bottom: var(--half-pad);
-  border-bottom-color: var(--mid-green);
-  color: var(--deep-green);
-  background: var(--green);
+  border-bottom-color: var(--edit-link-border);
+  color: var(--edit-link-color);
+  background: var(--edit-link-bg);
 }
 
 @media(max-width: 800px) {
@@ -201,6 +225,10 @@ aside section ul {
   padding-left: 1em;
 }
 
+aside section ul {
+  word-break: break-word;
+}
+
 article {
   grid-area: article;
   max-width: 48em;
@@ -222,7 +250,7 @@ footer .initials {
   width: 40px;
   height: 40px;
   border-radius: 20px;
-  overflow: hidden;
+  background: var(--green);
 }
 
 /* MINOR ELEMENTS */
@@ -273,11 +301,11 @@ ul {
 }
 
 li {
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 li + li {
-  margin-top: .4em;
+  margin-top: .5em;
 }
 
 li a {

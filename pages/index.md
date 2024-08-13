@@ -2,17 +2,16 @@
 title: Future of Coding Wiki
 ---
 
-This is the **Future of Coding** Wiki!
+*The following is placeholder garbage.*
 
-*The following is GPT-generated placeholder.*
+Welcome to the future of whatever it once was. How is it now?
 
-Ah, the coding community of the future, where developers no longer need to worry about trivial matters like syntax errors or debugging. Why? Because AI will be doing all the coding for us! Imagine a world where you just need to think about an app, and voilà, it's already deployed. Of course, this means that we'll spend more time arguing about whose AI is superior rather than actually writing any code. Forget about Stack Overflow; our new hangout will be "Whose Bot Is It Anyway?" where the points don’t matter, and the bugs are made up.
+Comics have become an integral part of our code. Think about it some more. A world where boot camps have replaced spas, a relaxing space where you can contemplate the blessings of algorithms while treating yourself to tissue. Forget your weaknesses. The biggest challenge you'll face is choosing between stone and Swedish while coding.
 
-In this utopian future, the only skill developers will need is the ability to articulate their thoughts clearly to their AI assistants. Forget about learning new programming languages or frameworks; the real challenge will be mastering the art of conversation. "Hey AI, build me a scalable, multi-tenant SaaS platform with integrated blockchain and machine learning capabilities." Easy, right? Just make sure you say it nicely, or your AI might give you a platform that runs on Internet Explorer.
+In this new world, CodeHub. Instead of asking for a pull-up, developers post a "selfish" that shows off their best self. The number of requests in the bond determines which priority to enter. And let's not forget the "fluencies" who make money by streaming code through companies that make comfortable chairs and blue glasses.
 
-And let's not forget the coding meetups of the future. Instead of bringing laptops, we'll all bring our neural interfaces and compete to see whose brainwaves can generate the most efficient code. The phrase "thinking outside the box" will take on a whole new meaning when you can literally think your way through a coding problem. And for those who still enjoy the tactile feel of a keyboard, there will be retro coding sessions where you can type out your thoughts the old-fashioned way—how quaint!
+Our sessions are all about "hecking", which means a balance of planning and practical skills. For example, CEOs write live code, explain spreadsheets, write repetitive functions, and perform comment dance. The audience voted for their favorite work and the winners were awarded with the Toothy Plaque award. I forgot to explain the code. The new measure of a horse's success is the number of horses clapped.
 
-Of course, the job market will be a bit different too. Instead of hiring developers, companies will be on the lookout for "AI whisperers"—those rare individuals who can coax the best performance out of their digital minions. Job interviews will involve less whiteboard coding and more discussions about your relationship with your AI. "Tell us about a time when you and your AI had a disagreement and how you resolved it." The future is all about synergy, after all.
+There is cooking, programming language: cooking and code. Have you ever tried Python paella or JavaScript jambala in the future and the restaurant will serve you food on par with your favorite language? Imagine five dishes. Sugar? A beautiful oyster that perfectly reflects the idea of home.
 
-Finally, let's not forget the open-source community of the future. Instead of contributing code, we'll be contributing "thought patterns" and "neural templates" to repositories. Pull requests will involve merging not just code but entire cognitive frameworks. And of course, there will still be the occasional flame war, but it will be about whose AI-generated code is more "elegant" or "idiomatic." Ah, the future of coding—where the only constant is change, and the only limit is your imagination (and your AI's processing power).
-
+Finally, let's talk about the inevitable fashion trend: "dirty shoelaces". In the future, editors will be remembered only for their editing skills. Also for their beautiful style. Expect fashion shows with clothes made from binary. What do you like to it do to the most? A USB cable is used to solve the problem. Forget clothes. Work your personality.
