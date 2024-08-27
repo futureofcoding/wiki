@@ -4,7 +4,6 @@
 
 :root {
   /* Fluid Spacing */
-  --pad: clamp(1rem, 2vw, 2.4rem);
   --half-pad: calc(var(--pad) * 0.5);
   --double-pad: calc(var(--pad) * 2);
 
@@ -20,6 +19,7 @@
   --main-shadow: #00000008;
   --text-color: var(--dark-grey);
   --code-color: hsl(160, 40%, 30%);
+  --code-bg: hsl(160, 10%, 97%);
   --link-color: var(--mid-green);
   --nav-link-hover-bg: hsl(160, 50%, 90%);
   --nav-link-border: hsl(160, 40%, 80%);
@@ -31,11 +31,12 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --page-bg: hsl(160, 50%, 4%);
-    --main-bg: hsl(160, 40%, 9%);
-    --main-shadow: #0009;
+    --page-bg: hsl(160, 85%, 5%);
+    --main-bg: hsl(200, 10%, 10%);
+    --main-shadow: #0003;
     --text-color: hsl(160, 30%, 90%);
     --code-color: hsl(160, 10%, 75%);
+    --code-bg: #000c;
     --link-color: var(--green);
     --nav-link-hover-bg: var(--dark-grey);
     --nav-link-border: #0003;
@@ -45,10 +46,15 @@
   }
 }
 
-/* Wide layout */
-@media(min-width: 801px) {
+@media(min-width: 801px) { /* Wide layout */
   :root {
-    --logo-width: 11em;
+    --pad: 2rem;
+  }
+}
+
+@media(max-width: 800px) { /* Narrow layout */
+  :root {
+    --pad: 1rem;
   }
 }
 
@@ -62,6 +68,10 @@ body {
   font-family: system-ui, sans-serif;
   color: var(--text-color);
   background-color: var(--page-bg);
+
+  /* Prevent Safari on iPhone from adjusting text size when the phone is turned to landscape */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 main {
@@ -69,7 +79,7 @@ main {
   padding: var(--pad);
   text-align: left;
   background: var(--main-bg);
-  box-shadow: 0 0 1em var(--main-shadow);
+  box-shadow: 0 .2em .5em var(--main-shadow);
 }
 
 @media(min-width: 801px) { /* Wide layout */
@@ -78,7 +88,7 @@ main {
       "header article"
       "aside article";
     grid-template-rows: auto 1fr; /* Pull the aside up towards the top */
-    grid-template-columns: var(--logo-width) minmax(auto, 48em); /* Set the header/aside width */
+    grid-template-columns: 10em minmax(0, 48em); /* Set the header/aside width explicitly, and shrink article to fit */
     gap: var(--pad);
     margin: var(--pad);
     border-radius: 3px;
@@ -91,6 +101,7 @@ main {
       "header"
       "article"
       "aside";
+    grid-template-columns: minmax(0, 100%);
     gap: var(--double-pad);
     width: 100%;
     padding-bottom: var(--double-pad);
@@ -256,15 +267,20 @@ title {
   text-wrap: balance;
 }
 
-article h1 { font-size: clamp(1.6em, 5vw, 2.5em); }
-article h2 { font-size: clamp(1.4em, 4vw, 2em); }
-article h3 { font-size: clamp(1.2em, 3vw, 1.5em); }
+article h1 { font-size: clamp(1.6em, 4vw, 2em); }
+article h2 { font-size: clamp(1.4em, 3vw, 1.5em); }
+article h3 { font-size: clamp(1.2em, 2.5vw, 1.25em); }
 
 h1 { border-bottom: 2px solid currentcolor }
 h2 { border-bottom: 1px solid currentcolor }
 
 h1, h2, h3 {
   font-weight: 300;
+  margin: 1em 0 .5em;
+}
+
+p {
+  margin: 0 0 1em;
 }
 
 img {
@@ -292,18 +308,22 @@ code {
   border-radius: 4px;
   font-family: ui-monospace, monospace;
   line-height: 1.3;
-  background: #000c;
+  background: var(--code-bg);
   color: var(--code-color);
 }
 
 pre {
-  padding: .6em 1em;
+  padding: .6em 0;
+  padding-right: 0;
   border-radius: 6px;
-  background: #000c;
-  color:
+  background: var(--code-bg);
 }
+
 pre code {
-  padding: 0;
+  display: block;
+  max-width: 100%;
+  padding: 0 1rem;
+  overflow-x: scroll;
   background: none;
 }
 
@@ -315,10 +335,6 @@ blockquote {
 
 ul {
   list-style-type: square;
-}
-
-li {
-  line-height: 1.2;
 }
 
 li + li {

@@ -53,9 +53,24 @@ writeFile = (path, text)-> fs.writeFileSync ensureDir(path), text
 # Copy the file from the given path to the given destination path
 copyFile = (path, dest)-> fs.copyFileSync path, dest
 
+# Given an html tag name, return a function that wraps a given string in that tag
+tag = (t)-> (str)-> "<#{t}>#{str}</#{t}>"
+
+# A function that wraps a string in an <li> tag
+li = tag "li"
+
+# Replace certain characters with HTML entities. Useful for code blocks.
+entityEncode = (str)->
+  str
+    .replaceAll "&", "&amp;"
+    .replaceAll "<", "&lt;"
+    .replaceAll ">", "&gt;"
+
+
+# This whitespace makes our HTML look nicer
 indent = "      "
 
-# Processing lines
+# These Tonedown rewrite rules help us figure out which HTML element(s) to use for the following line(s) of input
 lineRules =
   "### ": "h3"
   "## " : "h2"
@@ -67,53 +82,60 @@ lineRules =
   "```" : "code"
   ""    : "p"
 
+# For a given line of input, figure out which Tonedown rule applies
 getRule = (line)->
   for mark, rule of lineRules
     if line.startsWith mark
       return [mark, rule]
 
-processLines = (lines)->
-  mode = "normal"
-  beginCode = true
-  processedLines = []
+# Process the given lines of input
+processLines = (page, lines)->
 
+  # The parser can be in one of three modes — "normal", "code", or "list"
+  mode = "normal"
+
+  # Build up the HTML output in this string
+  body = ""
+
+  # Process each line one by one
   for line in lines
 
-    # Figure out what rule applies to the line
+    # Extract the Tonedown mark from the start of the line, and get the corresponding rule to apply
     [mark, rule] = getRule line
 
     # Check for code mode boundary
-    # TODO: Add support for a language directive after the mark
+    # TODO: Add support for a language directive after the mark (for syntax highlighting)
     if rule is "code"
+
+      # When we encounter a code rule, toggle in/out of code mode
       mode = if mode is "code" then "normal" else "code"
+
       if mode is "code"
-        beginCode = true
+        # Begin the code block
+        body += "<pre><code>"
       else
-        processedLines[processedLines.length-1] += "</code></pre>\n"
+        # Remove the \n from the previous line
+        body = body.slice 0, -1
+        # End the code block
+        body += "</code></pre>\n"
       continue
 
-    # When in code mode, escape a few chars, but otherwise leave the line as-is
+    # When in code mode, encode a few chars, but otherwise leave the line as-is
     if mode is "code"
-      line = line
-        .replaceAll "&", "&amp;"
-        .replaceAll "<", "&lt;"
-        .replaceAll ">", "&gt;"
-      line = "\n<pre><code>" + line if beginCode
-      processedLines.push line
-      beginCode = false
+      body += entityEncode line + "\n"
       continue
 
     # Check for list mode boundary
     if rule is "li" and mode isnt "list"
       mode = "list"
-      processedLines.push indent + "<ul>"
+      body += indent + "<ul>" + "\n"
     else if mode is "list" and rule isnt "li"
       mode = "normal"
-      processedLines.push indent + "</ul>"
+      body += indent + "</ul>" + "\n"
 
     # Pass HTML straight through
     if rule is "html"
-      processedLines.push indent + line
+      body += indent + line + "\n"
       continue
 
     # Remove the mark and outer whitespace from the line
@@ -123,7 +145,7 @@ processLines = (lines)->
     continue if line.length is 0
 
     # Now process all the inline rules
-    line = processInline line
+    line = processInline page, line
 
     # Build our tags
     open = "<" + rule + ">"
@@ -133,39 +155,83 @@ processLines = (lines)->
     open = "  " + open if mode is "list"
 
     # Wrap the line in the tags
-    processedLines.push [indent, open, line, close].join ""
+    body += [indent, open, line, close].join("") + "\n"
 
   # Put all the processed lines together into a body
-  body = processedLines.join "\n"
+  return body
 
 # Processing within a line
-processInline = (line)->
-  # Strong
-  tokens = line.split /\*{2}|_{2}/
-  if tokens.length > 1
-    results = for token, i in tokens
-      if i % 2 is 0 then token else "<strong>#{token}</strong>"
-    line = results.join ""
+processInline = (page, line)->
+  chars = line.split ""
+  out = ""
 
-  # Em
-  tokens = line.split /\*|_/
-  if tokens.length > 1
-    results = for token, i in tokens
-      if i % 2 is 0 then token else "<em>#{token}</em>"
-    line = results.join ""
+  mode = {}
+  toggle = (m)->
+    mode[m] = if mode[m] then false else true
+    out += if mode[m] then "<#{m}>" else "</#{m}>"
 
-  # Code span
-  tokens = line.split "`"
-  if tokens.length > 1
-    results = for token, i in tokens
-      if i % 2 is 0 then token else "<code>#{token}</code>"
-    line = results.join ""
+  doubles = "[*_" # these chars can appear in a double
+  checkForDouble = (c)->
+    return c if doubles.indexOf(c) is -1 # we only check certain chars for a double
+    # we might have a double
+    next = chars.shift() # pull the next char
+    return c + c if c is next # if they match, we have a double!
+    # no double
+    chars.unshift next # put the next char back in place
+    return c # we don't have a double
 
-  # Link
-  # Image
-  # Code span
+  consumeUntil = (p)->
+    res = "" # build up this string until it ends with p
+    while chars.length > 0
+      res += chars.shift()
+      if res.endsWith(p) # when res ends with p
+        return res.slice 0, -p.length # strip p from the end, and return res
+    res # we didn't find a match for p, so just return res
 
-  line
+  while chars.length > 0
+
+    # pull the next char
+    char = chars.shift()
+
+    # If the following char is one of our valid doubles, pull it too
+    char = checkForDouble char
+
+    if false
+      null
+
+    else if char is "[[" # Internal link
+      str = consumeUntil "]]"
+      [text, title] = str.split "|"
+      title ||= text
+      title.trim()
+      text.trim()
+      if dest = pages[title]
+        dest.backlinks[page.data.title] = page.url
+        out += "<a href=\"#{dest.url}\">#{text}</a>"
+
+    # else if char is "<" # Inline HTML !!
+    #   str = consumeUntil ">"
+    #   out += "<#{str}>"
+
+    else if char is "["
+      str = consumeUntil ")"
+      [text, url] = str.split "]("
+      out += "<a href=\"#{url}\">#{text}</a>"
+
+    else if char is "`"
+      str = consumeUntil "`"
+      out += "<code>#{entityEncode str}</code>"
+
+    else if char is "**" or char is "__"
+      toggle "strong"
+
+    else if char is "*" or char is "_"
+      toggle "em"
+
+    else
+      out += char
+
+  out
 
 # Begin processing all files
 
@@ -219,7 +285,9 @@ for pageFilename in readDir "pages"
   page.content = readFile page.sourcePath
 
   # Process the frontmatter
-  [a, frontmatter, body] = page.content.split /^---/m
+  [a, frontmatter, ...body] = page.content.split "---"
+
+  body = body.join "---"
 
   # Save the body
   page.body = body
@@ -242,7 +310,7 @@ for pageFilename in readDir "pages"
 for pageName, page of pages
 
   # If this page is markdown, run it through our list of replacement rules
-  body = processLines page.body.split "\n"
+  body = processLines page, page.body.split "\n"
 
   # Inject the page title as a visible title element
   body = "\n#{indent}<title>#{page.data.title}</title>\n" + body
@@ -254,17 +322,9 @@ for pageName, page of pages
   page.html = page.html.replaceAll "{{path}}", page.sourcePath
 
   # Replace the string {{all}} with links to all pages
-  page.html = page.html.replaceAll "{{all}}", Object.values(pages).map((p)-> "<li><a href=\"#{p.url}\">#{p.data.title}</a></li>").join("\n")
+  page.html = page.html.replaceAll "{{all}}", Object.values(pages).map((p)-> li "<a href=\"#{p.url}\">#{p.data.title}</a>").join("\n")
 
-  page.html = page.html.replaceAll "{{contributors}}", page.data.contributors?.split(", ")?.map((c)->"<li>#{c}</li>") or "None"
-
-  # Internal link
-  page.html = page.html.replaceAll /\[\[(.+)\]\]/g, (match, captured)->
-    [text, title] = captured.split "|"
-    title ||= text
-    if dest = pages[title]
-      dest.backlinks[page.data.title] = page.url
-      "<a href=\"#{dest.url}\">#{title}</a>"
+  page.html = page.html.replaceAll "{{contributors}}", page.data.contributors?.split(", ")?.map((c)->li "#{c}") or li "None"
 
   null
 
@@ -272,12 +332,12 @@ for pageName, page of pages
   # Populate backlinks
 
   backlinks = for title, url of page.backlinks
-    "<li><a href=\"#{url}\">#{title}</a></li>"
+    "<a href=\"#{url}\">#{title}</a>"
 
   if backlinks.length is 0
     backlinks = ["None"]
 
-  page.html = page.html.replaceAll "{{backlinks}}", backlinks.join "\n"
+  page.html = page.html.replaceAll "{{backlinks}}", backlinks.map(li).join "\n"
 
   # Finally, write the page content to the destination path.
   writeFile page.destPath, page.html
