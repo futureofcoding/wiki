@@ -31,9 +31,9 @@
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --page-bg: hsl(160, 85%, 5%);
+    --page-bg: hsl(160, 100%, 3%);
     --main-bg: hsl(200, 10%, 10%);
-    --main-shadow: #0003;
+    --main-shadow: #0005;
     --text-color: hsl(160, 30%, 90%);
     --code-color: hsl(160, 10%, 75%);
     --code-bg: #000c;
@@ -79,7 +79,7 @@ main {
   padding: var(--pad);
   text-align: left;
   background: var(--main-bg);
-  box-shadow: 0 .2em .5em var(--main-shadow);
+  box-shadow: 0 .2em 1em var(--main-shadow);
 }
 
 @media(min-width: 801px) { /* Wide layout */
@@ -338,7 +338,7 @@ ul {
 }
 
 li + li {
-  margin-top: .5em;
+  margin-top: .7em;
 }
 
 li a {
