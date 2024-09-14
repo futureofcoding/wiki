@@ -307,7 +307,7 @@ img {
 
 a {
   color: var(--link-color);
-  text-decoration: none;
+  /* reject modernism */
   border-radius: 1px; /* This rounds the corners of the focus outline */
   outline-offset: 2px;
 }
