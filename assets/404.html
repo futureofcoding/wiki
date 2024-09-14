@@ -14,18 +14,48 @@
         <img alt="Future of Coding" width="300" height="300" src="/wiki.svg">
       </a>
       <nav>
-        <a id="edit" href="https://github.com/futureofcoding/wiki/edit/main/{{path}}">
+        <a id="edit" href="https://github.com/futureofcoding/wiki/new/main/pages?filename=My-file-name.md&value=---%0Atitle:%20A%20New%20Page%0Acontributors:%20Your%20Name%0A---">
           <span>Edit This Page</span>
           <img width="14" height="13" src="/edit.svg" alt="">
         </a>
-        <a href="/">Home</a>
-        <a href="/all">List of All Pages</a>
+        <a href="/all">All Pages</a>
+        <a href="/search">Search</a>
       </nav>
     </header>
 
-    This page doesn't exist.
+    <article>
 
-    <a href="https://github.com/futureofcoding/wiki/new/master/_pages?filename=pages%2FMy-file-name.md&value=---%0Atitle:%20A%20New%20Page%0Acontributors:%20Your%20Name%0A---">Create it on GitHub</a>
+      <div>
+        <p>This page doesn't exist.</p>
+        <a id="new" href="https://github.com/futureofcoding/wiki/new/main/pages?filename=My-file-name.md&value=---%0Atitle:%20A%20New%20Page%0Acontributors:%20Your%20Name%0A---">Create it on GitHub?</a>
+      </div>
+
+      <style>
+        @media (min-width: 801px) {
+          article {
+            display: grid;
+            place-content: center;
+          }
+          article div {
+            padding: 2em;
+            margin-left: -12.5em;
+            border-radius: 1px;
+            background: #9991;
+          }
+        }
+      </style>
+
+      <script>
+        let name = window.location.pathname.slice(1);
+        ["edit", "new"].forEach((id)=> {
+          let elm = document.getElementById(id)
+          elm.href = elm.href
+            .replace("My-file-name.md", name + ".md")
+            .replace("A%20New%20Page", encodeURI(name))
+        })
+      </script>
+
+    </article>
 
   </main>
 

@@ -89,7 +89,7 @@ main {
       "aside article";
     grid-template-rows: auto 1fr; /* Pull the aside up towards the top */
     grid-template-columns: 10em minmax(0, 48em); /* Set the header/aside width explicitly, and shrink article to fit */
-    gap: var(--pad);
+    gap: 0 var(--pad);
     margin: var(--pad);
     border-radius: 3px;
   }
@@ -102,9 +102,9 @@ main {
       "article"
       "aside";
     grid-template-columns: minmax(0, 100%);
-    gap: var(--double-pad);
     width: 100%;
     padding-bottom: var(--double-pad);
+    margin-bottom: var(--double-pad);
   }
 }
 
@@ -126,6 +126,7 @@ header {
     flex-flow: row;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: var(--double-pad);
   }
 }
 
@@ -202,9 +203,16 @@ aside {
   gap: var(--pad);
 }
 
+@media(min-width: 801px) {
+  aside {
+    margin-top: var(--pad);
+  }
+}
+
 @media(max-width: 800px) {
   aside {
     flex-flow: row wrap;
+    margin-top: var(--double-pad);
   }
 }
 
@@ -286,7 +294,11 @@ h2 {
 }
 
 p {
-  margin: 0 0 1em;
+  margin: 0 0 1.2em;
+}
+
+p:last-child {
+  margin: 0;
 }
 
 img {

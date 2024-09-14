@@ -50,7 +50,7 @@ mkdir = (path)-> fs.mkdirSync path, recursive: true
 ensureDir = (path)-> mkdir(path.split("/")[0...-1].join("/")); path
 
 # Delete the file or folder at the given path, or fail silently if it doesn't exist
-rm = (path)-> try fs.rmSync path, recursive: trues
+rm = (path)-> try fs.rmSync path, recursive: true
 
 # Give us the names of all the files in a given folder, ignoring dotfiles
 readDir = (path)-> fs.readdirSync(path).filter (file)-> !file.startsWith "."
@@ -332,23 +332,31 @@ for pageName, page of pages
   page.html = "\n#{indent}<title>#{page.data.title}</title>\n" + page.html
 
 
-# BUILD THE s
+# DRAW THE REST OF THE OWL
 for pageName, page of pages
   html = layout
 
   # Replace the string {{path}} with the path to this page file — used for Edit on GitHub link
   html = html.replaceAll "{{path}}", page.sourcePath
 
-  # Replace the string {{contributors}} with the contributors section
-  html = html.replaceAll "{{contributors}}", if not page.data.contributors? then "" else
-    lis = page.data.contributors.split(",").map (c)-> li c.trim()
-    "<section><h1>Contributors</h1><ul>#{lis}</ul></section>"
-
-  # Replace the string {{backlinks}} with the backlinks section
+  aside = ""
   backlinks = ("<a href=\"#{url}\">#{title}</a>" for title, url of page.backlinks)
-  html = html.replaceAll "{{backlinks}}", if backlinks.length is 0 then "" else
-    lis = backlinks.map(li).join("")
-    "<section><h1>Backlinks</h1><ul>#{lis}</ul></section>"
+
+  if page.data.contributors? or backlinks.length
+
+    aside = "<aside>\n"
+
+    if page.data.contributors?
+      lis = page.data.contributors.split(",").map (c)-> li c.trim()
+      aside += indent + "  <section><h1>Contributors</h1><ul>#{lis}</ul></section>\n"
+
+    if page.backlinks
+      lis = backlinks.map(li).join("")
+      aside += indent + "  <section><h1>Backlinks</h1><ul>#{lis}</ul></section>\n"
+
+    aside += indent + "</aside>"
+
+  html = html.replaceAll "{{aside}}", aside
 
   # Replace the string {{page}} with the page body
   html = html.replace /\s*{{page}}/, page.html
