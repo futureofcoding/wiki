@@ -290,7 +290,10 @@ for pageFilename in readDir "pages"
 
   # This is the full destination path where we'll save our page.
   # To make the URLs pretty, each page becomes an "index.html" file in its own folder.
-  page.destPath = "public/" + pageName + "/index.html"
+  if pageName is "404"
+    page.destPath = "public/404.html"
+  else
+    page.destPath = "public/" + pageName + "/index.html"
 
   # One exception to the above — the main index of the site does not go in its own folder.
   page.destPath = page.destPath.replace "/index/index.html", "/index.html"
