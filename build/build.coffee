@@ -363,7 +363,7 @@ for pageName, page of pages
   html = html.replace /\s*{{page}}/, page.html
 
   # Replace the string {{all}} with links to all pages
-  html = html.replaceAll "{{all}}", (li "<a href=\"#{p.url}\">#{p.data.title}</a>" for _, p of pages).join "\n"
+  html = html.replaceAll "{{all}}", (li "<a href=\"#{p.url}\">#{p.data.title}</a>" for _, p of pages when p.data.title not in ["404", "All Pages", "Search", "Future of Coding Wiki"]).join "\n"
 
   # Finally, write the page content to the destination path.
   writeFile page.destPath, html
