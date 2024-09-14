@@ -3,20 +3,16 @@ title: Tonedown
 contributors: Ivan Reese
 ---
 
-Tonedown is a plain text markup language designed by Ivan Reese specifically for this Wiki. It aspires to be quite similar to [Markdown](https://daringfireball.net/projects/markdown/), with the pragmatism of [Gemtext](https://gemini.flounder.online/docs/cheatsheet.gmi). It has a few leading principles, and reflects the technical aesthetics of its designer.
+Tonedown is a plain text markup language. You'll find it pleasant to read and write Tonedown, especially long-form prose like a wiki entry. The syntax should get out of your way and let you focus on the content of your writing.
 
-Like Markdown and Gemtext, and unlike HTML, you'll find it pleasant to read and write Tonedown in a plain text editor, especially long-form prose like a wiki entry. The syntax should get out of your way and let you focus on the content of your writing.
+It borrows most of its syntax from [Markdown](https://daringfireball.net/projects/markdown/), and you should use the `.md` file extension so that your text editor will give you nice syntax highlighting.
 
-Like Markdown, you can just write HTML pretty much anywhere and it'll pass straight through.
+It borrows from the philosophy of [Gemtext](https://gemini.flounder.online/docs/cheatsheet.gmi) that it should be easy to process with a small implementation.
 
-Unique to Tonedown is a focus on the clarity of the implementation. It's coded in a slightly unusual style, with the eventual goal of making it quite straightforward to port to other languages. To wit, the implementation is exhaustively commented; the code should make sense to someone who is just beginning to learn how to code and is unfamiliar with the programming language used. (Note that this is a work in progress — at the time of writing, the implementation does not uniformly meet these goals.)
+# A Brief but Tiresome Tour of Tonedown
 
-If something doesn't work the way you expect, tell me and I'll listen.
-
-# Tour
-
-### Paragraphs
-Each line of plain writing becomes its own paragraph. It's strongly recommended that you enable **Soft Wrap** in your editor.
+## Paragraphs
+Each line of plain writing becomes its own paragraph.
 
 ```
 It is late. The window is open.
@@ -31,7 +27,10 @@ It can't even hold a steady pitch.
 <p>It can't even hold a steady pitch.</p>
 ```
 
-### Headings
+* Blank lines are ignored.
+* It's recommended that you enable **Soft Wrap** in your editor.
+
+## Headings
 Tonedown supports three levels of heading, colloquially named as follows.
 
 ```
@@ -46,88 +45,109 @@ Tonedown supports three levels of heading, colloquially named as follows.
 <h3>Diminished heading</h3>
 ```
 
+## Lists
 Any line beginning with a `-` or a `*` will make a list.
- - First list item
- - Second list item
-will make bullets, like
-- Secret third thing
-- Wait, these are unordered lists, why am I counting?
-
-Open and close code blocks with three backticks.
 
 ```
-This boxy abode
-  contains your code
-    natural or synthetic
-
-# line shit
-* should be
-> ignored
-<a>and this poor link, apathetic</a>
-Any *inline* **style**? Decline. A super duper really very greatly excessively long single solid never-ceasing run-on? With aplomb!
-
-Empty line? Even this ``` should be fine!
+- Do Make
+- Say Think
+```
+↓
+```
+<ul>
+  <li>Do Make</li>
+  <li>Say Think</li>
+</ul>
 ```
 
-> A quote
+## Code
+Use a backtick <code>&grave;</code> to indicate code.
 
-# How it works
-
-Each line is processed one by one.
-
-If the line is just good ol' plain normal writing, it becomes a `<p>` element. Each new line becomes a new paragraph. Blank lines are ignored.
-
-If the line begins like one of the following, it'll behave accordingly:
-
- # An `<h1>` title
- ## An `<h2>` title
- ### An `<h3>` title
- - A `<ul>` list (you can also use a `*` for lists)
- > A blockquote
-
-You can create blocks of code with three backticks, like so:
-
-&#96;&#96;&#96;
-Some code
-&#96;&#96;&#96;
-
-You can also use <span style="color:yellow">HTML</span> anywhere, anytime.
-
-The line above looks like so:
 ```
-<span style="color:yellow">HTML</span>
+Does `5 x 3` count as code?
+```
+↓
+```
+Does <code>5 x 3</code> count as code?
 ```
 
-# Extra testing
+<br>
 
-An _italic_ and *italic*!
-A **bold** and __bold__!
+You can also use three backticks to make a whole block of code.
 
-An _ita lic_ and *ita lic*!
-A **bo ld** and __bo ld__!
+<pre><code>&grave;&grave;&grave;
+  Vibes.tighten()
+  &grave;&grave;&grave;</code></pre>
+↓
+```
+<pre><code>Vibes.tighten()</code></pre>
+```
 
-Some *italic **both* bold** none.
+## Quotes
+Prepend each line with `>` to indicate a block quote.
 
-__Bold__
-**Bold**
+```
+> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+> "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in
+> this document are to be interpreted as described in RFC 2119.
+```
+↓
+> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+> "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in
+> this document are to be interpreted as described in RFC 2119.
 
-_Italic_
-*Italic*
+## Formatting
 
-***Bold italic***
-___Bold italic___
+Surround a word with:
+* `*` or `_` for `<em>`, which is rendered as *italic*, or
+* `**` or `__` for `<strong>`, rendered as **bold**.
 
-_**Bold italic**_
-**_Bold italic**_
-_**Bold italic_**
-**_Bold italic_**
+```
+Tonedown is *demure*, like **dirt under my pillow**.
+```
+↓
+```
+Tonedown is <em>demure</em>, like <strong>dirt under my pillow</strong>.
+```
 
-__*Bold Italic*__
-*__Bold Italic*__
-__*Bold Italic__*
-*__Bold Italic__*
+## Links
 
-*_*Just italic?*_*
-_*_Just italic?_*_
+Tonedown supports two kinds of link.
 
+Use an **internal link** to link to another wiki page.
 
+```
+Be sure to check out the [[Tonedown]] documentation,
+and the [[contributing guide|Contributing]]
+```
+↓
+```
+Be sure to check out the <a href="/tonedown">Tonedown</a> documentation,
+and the <a href="/contributing">contributing guide</a>
+```
+
+<br>
+
+Use an **external link** to link to another website.
+
+```
+The [Future of Coding](futureofcoding.org) community.
+```
+↓
+```
+The <a href="https://futureofcoding.org">Future of Coding</a> community.
+```
+
+## HTML
+
+You can use HTML anywhere.
+
+```
+I've got <span style="font-family: fantasy">weird</span> feelings.
+
+<small>But I'm a good friend.</small>
+```
+↓
+I've got <span style="font-family: fantasy">weird</span> feelings.
+
+<small>But I'm a good friend.</small>

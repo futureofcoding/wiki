@@ -1,4 +1,15 @@
 ###
+
+IGNORE THIS WHOLE FILE FOR NOW — IVAN IS STILL FIGURING OUT WHAT IT SHOULD BE
+
+###
+
+
+
+
+
+
+###
 Future of Coding Wiki
 CoffeeScript Build Script
 
@@ -72,6 +83,7 @@ indent = "      "
 
 # These Tonedown rewrite rules help us figure out which HTML element(s) to use for the following line(s) of input
 lineRules =
+  " "   : "skip"
   "### ": "h3"
   "## " : "h2"
   "# "  : "h1"
@@ -141,6 +153,11 @@ processLines = (page, lines)->
     # Remove the mark and outer whitespace from the line
     line = line.replace(mark, "").trim()
 
+    # This is a weird trick for not generating a <p> tag — just indent it by one or more spaces
+    if rule is "skip"
+      body += line + "\n"
+      continue
+
     # If the line is now empty, bail
     continue if line.length is 0
 
@@ -162,7 +179,7 @@ processLines = (page, lines)->
 
 # Processing within a line
 processInline = (page, line)->
-  chars = line.split ""
+  chars = Array.from line # Don't use .split("") because that doesn't handle multi-part unicode
   out = ""
 
   mode = {}
@@ -196,10 +213,7 @@ processInline = (page, line)->
     # If the following char is one of our valid doubles, pull it too
     char = checkForDouble char
 
-    if false
-      null
-
-    else if char is "[[" # Internal link
+    if char is "[[" # Internal link
       str = consumeUntil "]]"
       [text, title] = str.split "|"
       title ||= text
@@ -216,6 +230,7 @@ processInline = (page, line)->
     else if char is "["
       str = consumeUntil ")"
       [text, url] = str.split "]("
+      url = "https://#{url}" unless url.toLowerCase().startsWith "http"
       out += "<a href=\"#{url}\">#{text}</a>"
 
     else if char is "`"
@@ -307,37 +322,39 @@ for pageFilename in readDir "pages"
   pages[page.data.title] = page
 
 
+# BUILD THE PAGE BODY
 for pageName, page of pages
 
   # If this page is markdown, run it through our list of replacement rules
-  body = processLines page, page.body.split "\n"
+  page.html = processLines page, page.body.split "\n"
 
   # Inject the page title as a visible title element
-  body = "\n#{indent}<title>#{page.data.title}</title>\n" + body
+  page.html = "\n#{indent}<title>#{page.data.title}</title>\n" + page.html
 
-  # Insert the page body into the layout
-  page.html = layout.replace /\s*{{page}}/, body
+
+# BUILD THE s
+for pageName, page of pages
+  html = layout
 
   # Replace the string {{path}} with the path to this page file — used for Edit on GitHub link
-  page.html = page.html.replaceAll "{{path}}", page.sourcePath
+  html = html.replaceAll "{{path}}", page.sourcePath
+
+  # Replace the string {{contributors}} with the contributors section
+  html = html.replaceAll "{{contributors}}", if not page.data.contributors? then "" else
+    lis = page.data.contributors.split(",").map (c)-> li c.trim()
+    "<section><h1>Contributors</h1><ul>#{lis}</ul></section>"
+
+  # Replace the string {{backlinks}} with the backlinks section
+  backlinks = ("<a href=\"#{url}\">#{title}</a>" for title, url of page.backlinks)
+  html = html.replaceAll "{{backlinks}}", if backlinks.length is 0 then "" else
+    lis = backlinks.map(li).join("")
+    "<section><h1>Backlinks</h1><ul>#{lis}</ul></section>"
+
+  # Replace the string {{page}} with the page body
+  html = html.replace /\s*{{page}}/, page.html
 
   # Replace the string {{all}} with links to all pages
-  page.html = page.html.replaceAll "{{all}}", Object.values(pages).map((p)-> li "<a href=\"#{p.url}\">#{p.data.title}</a>").join("\n")
-
-  page.html = page.html.replaceAll "{{contributors}}", page.data.contributors?.split(", ")?.map((c)->li "#{c}") or li "None"
-
-  null
-
-for pageName, page of pages
-  # Populate backlinks
-
-  backlinks = for title, url of page.backlinks
-    "<a href=\"#{url}\">#{title}</a>"
-
-  if backlinks.length is 0
-    backlinks = ["None"]
-
-  page.html = page.html.replaceAll "{{backlinks}}", backlinks.map(li).join "\n"
+  html = html.replaceAll "{{all}}", (li "<a href=\"#{p.url}\">#{p.data.title}</a>" for _, p of pages).join "\n"
 
   # Finally, write the page content to the destination path.
-  writeFile page.destPath, page.html
+  writeFile page.destPath, html
