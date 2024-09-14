@@ -1,6 +1,7 @@
 ###
 
-IGNORE THIS WHOLE FILE FOR NOW — IVAN IS STILL FIGURING OUT WHAT IT SHOULD BE
+this file is a work in progress and a bit messy/undetermined. good luck! :)
+if you have any questions, feel free to ask Ivan. he loves talking about coffee script!
 
 ###
 
