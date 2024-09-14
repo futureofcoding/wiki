@@ -8,25 +8,9 @@ We'll use this wiki to collect all sorts of references, projects, concepts, real
 
 Everyone is welcome to contribute. Please feel free to edit _anything in the repo_ at any time in any way, and then submit a PR.
 
-### Pages
+For more guidance, see the [Contributing](https://wiki.futureofcoding.org/contributing) page.
 
-Pages live in the [pages](https://github.com/futureofcoding/wiki/tree/master/pages) folder.
-
-Note that we use a custom Markdown subset. See the Tonedown page for details.
-
-Pages should begin with "frontmatter", which is a fancy name for metadata using the following template:
-
-```yaml
----
-title: Name of the Page
-contributors: Comma-Separated, List of People, Who Contributed
----
-This is the body of the page.
-```
-
-Yeah, that's it for now. We might add some other kinds of frontmatter soon — maybe a tagging scheme?
-
-### Build Scripts
+## Build Scripts
 
 This wiki uses a build script to do a few things:
 
