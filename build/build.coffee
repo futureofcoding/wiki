@@ -354,7 +354,7 @@ for pageName, page of pages
       lis = page.data.contributors.split(",").map (c)-> li c.trim()
       aside += indent + "  <section><h1>Contributors</h1><ul>#{lis}</ul></section>\n"
 
-    if page.backlinks
+    if backlinks.length
       lis = backlinks.map(li).join("")
       aside += indent + "  <section><h1>Backlinks</h1><ul>#{lis}</ul></section>\n"
 
