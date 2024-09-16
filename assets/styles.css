@@ -241,6 +241,10 @@ article {
   grid-area: article;
 }
 
+article a {
+  text-decoration: underline;
+}
+
 footer {
   margin: 0 0 var(--pad);
   text-wrap: balance;
