@@ -204,7 +204,9 @@ processInline = (page, line)->
       res += chars.shift()
       if res.endsWith(p) # when res ends with p
         return res.slice 0, -p.length # strip p from the end, and return res
-    res # we didn't find a match for p, so just return res
+    # we didn't find a match for p, so restore chars and return null
+    chars = Array.from(res).concat chars
+    null
 
   while chars.length > 0
 
@@ -229,10 +231,12 @@ processInline = (page, line)->
     #   out += "<#{str}>"
 
     else if char is "["
-      str = consumeUntil ")"
-      [text, url] = str.split "]("
-      url = "https://#{url}" unless url.toLowerCase().startsWith "http"
-      out += "<a href=\"#{url}\">#{text}</a>"
+      if str = consumeUntil ")"
+        [text, url] = str.split "]("
+        url = "https://#{url}" unless url.toLowerCase().startsWith "http"
+        out += "<a href=\"#{url}\">#{text}</a>"
+      else
+        out += "["
 
     else if char is "`"
       str = consumeUntil "`"
@@ -351,7 +355,8 @@ for pageName, page of pages
     aside = "<aside>\n"
 
     if page.data.contributors?
-      lis = page.data.contributors.split(",").map (c)-> li c.trim()
+      console.log page.data.contributors
+      lis = page.data.contributors.split(",").map((c)-> li c.trim()).join ""
       aside += indent + "  <section><h1>Contributors</h1><ul>#{lis}</ul></section>\n"
 
     if backlinks.length

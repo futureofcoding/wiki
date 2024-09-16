@@ -5,7 +5,7 @@ contributors: Kartik Agaram
 
 This list currently skews heavily non-commercial, but feel free to edit to your taste and we'll figure it out. I'm aiming for projects you can actually chat with the creators about on the FoC forum. In alphabetical order for lack of a better idea.
 
-**[0D](https://github.com/guitarvydas/0D):** Component-based software using drawings as source code 
+**[0D](https://github.com/guitarvydas/0D):** Component-based software using drawings as source code
 
 **[Blawx](https://github.com/Lexpedite/blawx):** A block-based programming language for drafting rules and laws
 
@@ -29,7 +29,7 @@ This list currently skews heavily non-commercial, but feel free to edit to your 
 
 **[Subtext](https://www.subtext-lang.org):** Experiments in radically simplifying programming
 
-**[Tom's Visual Probabilistic Programming Language](http://alltom.com/pages/ppl-lab-notebook)** 
+**[Tom's Visual Probabilistic Programming Language](http://alltom.com/pages/ppl-lab-notebook)**
 
 ## Less active projects/creators
 
@@ -47,4 +47,4 @@ This list currently skews heavily non-commercial, but feel free to edit to your 
 
 ## Related
 
-This page was seeded from [Duncan Cragg's project comparison spreadsheet](https://docs.google.com/spreadsheets/d/12sTu7RT-s_QlAupY1v-3DfI1Mm9NEX5YMWWTDAKHLfc/edit?pli=1&gid=0#gid=0)
+This page was seeded from [Duncan Cragg's project comparison spreadsheet](https://docs.google.com/spreadsheets/d/12sTu7RT-s_QlAupY1v-3DfI1Mm9NEX5YMWWTDAKHLfc/edit)

@@ -1,5 +1,5 @@
 ---
-title: Collaboration in the community
+title: Collaboration in the Community
 contributors: Kartik Agaram, Ivan Reese
 ---
 
@@ -13,8 +13,7 @@ Let's collect some nice examples of the sorts of collaboration taking place.
 
 [This wiki](/), naturally, is a collaborative project run by members of the community. There are also a few other-meta projects that seek to foster collaboration.
 
-### [Project Comparison] Google Sheet
-This is a spreadsheet listing Future of Coding projects in and around the community. It’s not an exhaustive listing, but it does provide an interesting starting point to see who here is working on what, plus a few projects elsewhere that might be of interest to our members. If you’re looking for a project to contribute to, this is one place to explore your options. If you are working on a project, you may edit the spreadsheet to add your project (please stick to the existing format).
+The [Project Comparison](https://docs.google.com/spreadsheets/d/12sTu7RT-s_QlAupY1v-3DfI1Mm9NEX5YMWWTDAKHLfc/edit) Google Sheet catalogs Future of Coding projects in and around the community. It's not an exhaustive listing, but it does provide an interesting starting point to see who here is working on what, plus a few projects elsewhere that might be of interest to our members. If you’re looking for a project to contribute to, this is one place to explore your options. If you are working on a project, you may edit the spreadsheet to add your project (please stick to the existing format).
 
 # Discussions
 
