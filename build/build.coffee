@@ -355,7 +355,6 @@ for pageName, page of pages
     aside = "<aside>\n"
 
     if page.data.contributors?
-      console.log page.data.contributors
       lis = page.data.contributors.split(",").map((c)-> li c.trim()).join ""
       aside += indent + "  <section><h1>Contributors</h1><ul>#{lis}</ul></section>\n"
 
