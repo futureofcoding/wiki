@@ -6,7 +6,9 @@ title: Contributing
 
 Below are some brief instructions for editing the wiki. But note well: this wiki is fledgling. We're still figuring out how it should work. If any of these instructions don't make sense, or if you have other questions, head to the **#present-company** channel in [our Slack](https://futureofcoding.org/community) and let us know.
 
-The wiki is made of plain text files in a [repo on GitHub](http://github.com/futureofcoding/wiki). Feel free to clone the repo and edit it on your machine, or edit via the GitHub website. Whenever you make an edit, issue a pull request and we'll promptly merge it.
+The wiki is made of plain text files in a [repo on GitHub](http://github.com/futureofcoding/wiki). Feel free to clone the repo and edit it on your machine, or edit via the GitHub website. Whenever you make an edit, open a pull request and we'll promptly merge it.
+
+If you'd like to add a new page, here's a handy shortcut. In your browser, go to the URL that you'd like your new page to have (eg: `wiki.futureofcoding.org/my-new-page`). You'll be given a link to create this new page on Github, and when you click it, the new page will be pre-populated with the appropriate template and filename.
 
 We use a subset of Markdown called [[Tonedown]], which keeps the `.md` extension but removes some lesser-used features for the sake of simplicity.
 
