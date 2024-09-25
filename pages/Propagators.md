@@ -14,9 +14,16 @@ This model makes it easy to smoothly combine expression-oriented and constraint-
 ## Papers
 
 - [The Art of the Propagator - Alexey Radul & Gerald Jay Sussman](https://citeseerx.ist.psu.edu/document?doi=755c48fd10aa303497ef849977c36529c0bb09ff&repid=rep1&type=pdf)
+- [Propagation Networks: A Flexible and Expressive Substrate for Computation by Alexey Andreyevich Radul](https://www.cs.tufts.edu/~nr/cs257/archive/alexey-radul/phd-thesis.pdf)
 
 ## Presentations
 
 - [Gerald Jay Sussman The Art of the Propagator](https://www.youtube.com/watch?v=-hQFrKspQHA)
 - [George Wilson - An Intuition for Propagators - Compose Melbourne 2019](https://www.youtube.com/watch?v=nY1BCv3xn24)
 - [Propagators Part 1 • Edward Kmett • YOW! 2016](https://www.youtube.com/watch?v=tETbivwzXBM)
+- [Propagators Part 2 • Edward Kmett • YOW! 2016](https://www.youtube.com/watch?v=0igYOKcIWUs)
+
+## Projects
+
+- [Propaganda: A propagator library for Clojure](https://github.com/tgk/propaganda)
+  - Check the readme for more resources 
