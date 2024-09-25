@@ -28,3 +28,12 @@ The filename of each page is used for the URL, so keep that filename consistent 
 When you edit a page, you're welcome to add your name to the list of contributors, if you'd like.
 
 Please note that all contributions are public domain, and subject to our [Code of Conduct](https://github.com/futureofcoding/code-of-conduct). We have a very low tolerance for self-promotion of products or companies. When in doubt, talk to us on [Slack](https://futureofcoding.org/community).
+
+---
+
+* When do we mirror content here, vs when do we not?
+* This is a collaborative exercise. We're not really tracking who did which writing, we should be free to edit anything.
+  * This is in contrast to the discussion form (Slack for now, but eventually something web native)
+  * Exception — if users have their own "profile pages", then it'd make sense to sort of treat that as a more personal space.
+* It would be great to have a way to add annotations/comments to passages of text, to signal diverging opinions — like `hypothes.is`, but native to our medium
+* 
