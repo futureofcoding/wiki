@@ -27,6 +27,8 @@ This list currently skews heavily non-commercial, but feel free to edit to your 
 
 **[Object Network](https://object.network):** A 3D operating system with no apps, just files
 
+**[Sandpond](https://sandpond.cool):** Menagerie of Cellular Automata
+
 **[Subtext](https://www.subtext-lang.org):** Experiments in radically simplifying programming
 
 **[Tom's Visual Probabilistic Programming Language](http://alltom.com/pages/ppl-lab-notebook)**

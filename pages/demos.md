@@ -1,0 +1,26 @@
+---
+title: Demos by the Community
+contributors: Kartik Agaram
+---
+
+Compared to [[projects]], this page lists demos that were shared by anyone with the community (and still have working links). You may not always be able to find the creators active in the community these days.
+
+Again, currently skews heavily non-commercial.
+
+## Neat demos
+
+**[Code Scrubber](https://codepen.io/domjancik/pen/XWdjrQv):** A UI for scrubbing over numbers in Javascript by [Dominik Jančík](https://akkartik.name/archives/foc/share-your-work/1597790379.004300.html)
+
+**[Polygon](https://polygon.iimaginary.com):** A spatial approach to sequencing musical rhythms by [Clam R](https://akkartik.name/archives/foc/share-your-work/1705356984.547739.html)
+
+**[Magic Hands](https://magichands.forestinthetree.com):** Swirling colors on screen by moving your hands by [Tak Tran](https://akkartik.name/archives/foc/share-your-work/1679863560.651599.html) ([prose](https://www.forestinthetree.com/blog/magic-hands))
+
+**[AI Tarot reading app](https://thetarot.online)** by [Tom Larkworthy](https://akkartik.name/archives/foc/share-your-work/1647859090.612199.html)
+
+**[Hamish Todd](https://hamishtodd1.github.io)** often posts neat videos
+
+**[Live coder](https://www.youtube.com/watch?v=LW_fgRFmEGI):** a plugin for VSCode that shows how your code runs as you type by [Fraser Greenlee](https://akkartik.name/archives/foc/share-your-work/1563997024.063400.html)
+
+**[Data Rabbit](https://www.datarabbit.com):** a flow-based Clojure notebook+whiteboard sandbox by [Ryan Robitaille](https://akkartik.name/archives/foc/share-your-work/1660441700.275339.html)
+
+**[WhiteBox](https://azmr.itch.io/whitebox):** a tool for visualizing C++ code execution by [Andrew Reece](https://azmr.itch.io/whitebox)
