@@ -3,7 +3,7 @@ title: Demos by the Community
 contributors: Kartik Agaram
 ---
 
-Compared to [[projects]], this page lists demos that were shared by anyone with the community (and still have working links). You may not always be able to find the creators active in the community these days.
+In contrast with [[projects]], this page lists demos that were shared by anyone with the community (and still have working links). You may not always be able to find the creators active in the community these days (or indeed ever).
 
 Again, currently skews heavily non-commercial.
 
@@ -24,3 +24,13 @@ Again, currently skews heavily non-commercial.
 **[Data Rabbit](https://www.datarabbit.com):** a flow-based Clojure notebook+whiteboard sandbox by [Ryan Robitaille](https://akkartik.name/archives/foc/share-your-work/1660441700.275339.html)
 
 **[WhiteBox](https://azmr.itch.io/whitebox):** a tool for visualizing C++ code execution by [Andrew Reece](https://azmr.itch.io/whitebox)
+
+**[The Creativity Lab at UCSD](https://creativity.ucsd.edu)** has had multiple demos shared.
+
+**[Tomorrow Corporation Tech Demo](https://www.youtube.com/watch?v=72y2EC5fkcE)** ([thread](https://akkartik.name/archives/foc/linking-together/1714416805.041219.html))
+
+**[Brief](https://www.youtube.com/watch?v=R3MNcA2dpts):** A live-updating concatenative environment ([thread](https://akkartik.name/archives/foc/linking-together/1599592790.107800.html); [website](http://brieflang.com))
+
+**[Field](http://openendedgroup.com/field2):** A live-programming environment for making digital art
+
+**[Bartosz Ciechanowski](https://ciechanow.ski)**

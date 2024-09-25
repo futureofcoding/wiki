@@ -5,6 +5,8 @@ contributors: Kartik Agaram
 
 This list currently skews heavily non-commercial, but feel free to edit to your taste and we'll figure it out. I'm aiming for projects you can actually chat with the creators about on the FoC forum. In alphabetical order for lack of a better idea.
 
+For smaller demos or projects that are not by people in the community, see [[demos]].
+
 **[0D](https://github.com/guitarvydas/0D):** Component-based software using drawings as source code
 
 **[Blawx](https://github.com/Lexpedite/blawx):** A block-based programming language for drafting rules and laws
