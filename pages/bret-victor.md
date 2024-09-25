@@ -1,5 +1,5 @@
 ---
-title: Bret Victor Links
+title: Bret Victor
 contributors: Mariano Guerra
 ---
 
