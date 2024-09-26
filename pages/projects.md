@@ -25,7 +25,7 @@ For smaller demos or projects that are not by people in the community, see [[dem
 
 **[Lazer Cutting Plan Compiler](https://observablehq.com/@tomlarkworthy/lazer-cut-shell-joints)**
 
-**[Leibniz](https://github.com/khinsen/leibniz-pharo):** A digital scientific notation with an interactive authoring environment
+**[Leibniz](https://github.com/khinsen/leibniz-pharo](https://leibniz.khinsen.net/):** A digital scientific notation with an interactive authoring environment
 
 **[Object Network](https://object.network):** A 3D operating system with no apps, just files
 
