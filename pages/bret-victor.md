@@ -23,6 +23,8 @@ The point of listing those here is not just to mirror what's on Bret's site, but
 
 ## Threads from our archives with interesting comments or call-outs
 
+[2024-09-20](https://akkartik.name/archives/foc/of-ai/1726886907.818599.html): On AI.
+
 [2020-12-12](https://akkartik.name/archives/foc/linking-together/1607775639.365100.html): The Anti-Mac interface
 
 [2020-12-16](https://akkartik.name/archives/foc/thinking-together/1607887127.284300.html#1608190990.334700): Trying to implement [Bret's binary search example from "Inventing On Principle"](https://vimeo.com/36579366) in a live-updating postfix environment.
