@@ -22,8 +22,11 @@ This model makes it easy to smoothly combine expression-oriented and constraint-
 - [George Wilson - An Intuition for Propagators - Compose Melbourne 2019](https://www.youtube.com/watch?v=nY1BCv3xn24)
 - [Propagators Part 1 • Edward Kmett • YOW! 2016](https://www.youtube.com/watch?v=tETbivwzXBM)
 - [Propagators Part 2 • Edward Kmett • YOW! 2016](https://www.youtube.com/watch?v=0igYOKcIWUs)
+- [Thomas Kristensen - Propagators in Clojure](https://www.youtube.com/watch?v=JXOOO9MLvhs)
 
 ## Projects
 
 - [Propaganda: A propagator library for Clojure](https://github.com/tgk/propaganda)
-  - Check the readme for more resources 
+  - Check the readme for more resources
+- [Propagators: A propagator library for Haskell](https://github.com/ekmett/propagators)
+- [Holograph: Visual propagators on top of tldraw](https://www.holograph.so/)
