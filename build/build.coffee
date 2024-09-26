@@ -20,6 +20,7 @@ It is run automatically on every commit to the repo.
 If you'd like to run it locally:
 1. Install coffeescript via npm: `npm i -g coffeescript`
 2. From the root of the repo, run `coffee build/build.coffee`
+3. If you also want to view the wiki locally, from the root of repo, run `npx http-server`
 
 If you don't use npm, or don't want to install CoffeeScript,
 you should use any of the other build scripts in this folder.
