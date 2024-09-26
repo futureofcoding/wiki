@@ -7,8 +7,6 @@ In contrast with [[projects]], this page lists demos that were shared by anyone 
 
 Again, currently skews heavily non-commercial.
 
-## Neat demos
-
 **[Code Scrubber](https://codepen.io/domjancik/pen/XWdjrQv):** A UI for scrubbing over numbers in Javascript by [Dominik Jančík](https://akkartik.name/archives/foc/share-your-work/1597790379.004300.html)
 
 **[Polygon](https://polygon.iimaginary.com):** A spatial approach to sequencing musical rhythms by [Clam R](https://akkartik.name/archives/foc/share-your-work/1705356984.547739.html)
