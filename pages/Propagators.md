@@ -27,12 +27,9 @@ This model makes it easy to smoothly combine expression-oriented and constraint-
 ## Projects
 
 - [Propaganda: A propagator library for Clojure](https://github.com/tgk/propaganda)
-  
-  - Check the readme for more resources
-
 - [Propagators: A propagator library for Haskell](https://github.com/ekmett/propagators)
 - [Holograph: Visual propagators on top of tldraw](https://www.holograph.so/)
 
 ## Related Work
 
-- [Scoped Propagators](https://www.orionreed.com/posts/scoped-propagators) ([HN Discussion](https://news.ycombinator.com/item?id=40916193))
+- [Scoped Propagators](https://www.orionreed.com/posts/scoped-propagators) - [HN Discussion](https://news.ycombinator.com/item?id=40916193)
