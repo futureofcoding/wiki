@@ -49,6 +49,10 @@ For smaller demos or projects that are not by people in the community, see [[dem
 
 **[Teliva](https://github.com/akkartik/teliva):** A sandboxed platform for text-mode end-user programmable apps
 
-## Related
+## Related/influential work
 
 This page was seeded from [Duncan Cragg's project comparison spreadsheet](https://docs.google.com/spreadsheets/d/12sTu7RT-s_QlAupY1v-3DfI1Mm9NEX5YMWWTDAKHLfc/edit)
+
+[Daniel Garcia's page](https://github.com/pel-daniel/mind-bicycles)
+
+[Ivan Reese's page](https://github.com/ivanreese/visual-programming-codex)
