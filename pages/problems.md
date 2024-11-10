@@ -7,7 +7,7 @@ In Aug 2024 the community did an exercise of articulating problems that motivate
 
 <img src='/202408-problems-starmap.png' width='100%'/>
 
-Distances and angles are not meaningful, just the presence or absence of an edge between two people.
+Distances and angles are not meaningful, just the presence or absence of an edge between two people. The graph is incomplete, because many people haven't yet commented on how close other problems seem to theirs.
 
 ## Phase 1: Problem statements
 
