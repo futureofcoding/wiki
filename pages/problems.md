@@ -13,7 +13,7 @@ _Arvind Thyagarajan:_ It's fun and cool and a matter of creative pride to build 
 
 _avon:_ I think fundamentally I’m trying to attack this feeling that the digital spaces my friends and I inhabit don’t feel like our own personal space, and we have to communicate using someone else’s set of rules.
 
-_Beni Cherniavsky-Paskin:_
+_Beni Cherniavsky-Paskin:_ 
 * The top-level environments in which end-users spend their work day are not malleable. This got worse in last decades.
 * The ones that are malleable, require too much professional coding knowledge to inspect or modify.
 * That holds even for 100% Open Source linux desktops. They could be so much more self-explaining, self-inspecting, self-modefecation-guiding... 
@@ -35,9 +35,9 @@ _Eli Mellen:_ A lot of what I do isn’t big project based work, it tends to be 
 
 _Guyren Howe:_ A great deal more business logic can be expressed in First Order Logic than usually is. The relational model shows us how to make FOL inference straightforward and predictable. Therefore, we should implement much more of our apps in a relational system.
 
-_Ivan Reese:_
+_Ivan Reese:_ 
 * At Ink & Switch: I've never seen software that echoes the pleasing feeling of scribbling on paper — especially not software for programming.
-* Hest  [_editorialized by Kartik based on [Hest podcast #40](https://ivanish.ca/hest-podcast)_]: A programming environment that feels less solipsistic, like it has an existence independent of the programmer(s).
+* Hest (editorialized by Kartik based on [Hest podcast #40](https://ivanish.ca/hest-podcast)): A programming environment that feels less solipsistic, like it has an existence independent of the programmer(s).
 * My personal website, the Hest podcast, the FoC podcast: Too often, the way we share our ideas feels like slowly letting stale air out of a balloon. 
 
 _Jason Morris:_ The world runs on rules. Rules can be made computable (without translating them into objects or functions or processes) but it's unnecessarily hard to do. If it was easy, people who understand rules could build software that understands them too, people with problems could get cheap and reliable help, asymmetry of information would be reduced, and the world would be more just.
