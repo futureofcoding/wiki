@@ -5,7 +5,7 @@ contributors: Kartik Agaram
 
 In Aug 2024 the community did an exercise of articulating problems that motivate us, and trying to organize along the lines of those problems. Here's the current "star map" showing Kartik's best guess of relative positions of everyone who participated:
 
-<img src='assets/202408-problems-starmap.png' width='100%'/>
+<img src='/202408-problems-starmap.png' width='100%'/>
 
 ## Phase 1: Problem statements
 
