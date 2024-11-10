@@ -71,7 +71,7 @@ _Tom Larkworthy:_ I think I am most aligned with malleability: adapting software
 
 ## Phase 2: All the raw assessments by everyone of how close our problem statements are to each other.
 
-[problems.html](assets/problems.html) (download a local copy and open it in your browser)
+[problems.html](assets/202408-problems.html) (download a local copy and open it in your browser)
 
 The image up top only uses everybody's assessments of the projects close to them (at distance 1, 2 or 3).
 
