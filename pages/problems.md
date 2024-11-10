@@ -3,9 +3,11 @@ title: Problems people are motivated by
 contributors: Kartik Agaram
 ---
 
-In Aug 2024 the community did an exercise of articulating problems that motivate us, and trying to organize along the lines of those problems. Here's the current "star map" showing Kartik's best guess of relative positions of everyone who participated:
+In Aug 2024 the community did an exercise of articulating problems that motivate us, and trying to organize along the lines of those problems. Here's the current "star map" showing close connections between everyone who participated:
 
 <img src='/202408-problems-starmap.png' width='100%'/>
+
+Distances and angles are not meaningful, just the presence or absence of an edge between two people.
 
 ## Phase 1: Problem statements
 
