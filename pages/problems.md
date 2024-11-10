@@ -13,7 +13,7 @@ _Arvind Thyagarajan:_ It's fun and cool and a matter of creative pride to build 
 
 _avon:_ I think fundamentally I’m trying to attack this feeling that the digital spaces my friends and I inhabit don’t feel like our own personal space, and we have to communicate using someone else’s set of rules.
 
-_Beni Cherniavsky-Paskin: 3 problems:
+_Beni Cherniavsky-Paskin:_ 3 problems:
 * The top-level environments in which end-users spend their work day are not malleable. This got worse in last decades.
 * The ones that are malleable, require too much professional coding knowledge to inspect or modify.
 * That holds even for 100% Open Source linux desktops. They could be so much more self-explaining, self-inspecting, self-modefecation-guiding...
