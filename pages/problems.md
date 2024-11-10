@@ -13,10 +13,10 @@ _Arvind Thyagarajan:_ It's fun and cool and a matter of creative pride to build 
 
 _avon:_ I think fundamentally I’m trying to attack this feeling that the digital spaces my friends and I inhabit don’t feel like our own personal space, and we have to communicate using someone else’s set of rules.
 
-_Beni Cherniavsky-Paskin:_ 
+_Beni Cherniavsky-Paskin: 3 problems:
 * The top-level environments in which end-users spend their work day are not malleable. This got worse in last decades.
 * The ones that are malleable, require too much professional coding knowledge to inspect or modify.
-* That holds even for 100% Open Source linux desktops. They could be so much more self-explaining, self-inspecting, self-modefecation-guiding... 
+* That holds even for 100% Open Source linux desktops. They could be so much more self-explaining, self-inspecting, self-modefecation-guiding...
 
 _Dany:_ I want to create interactive content and games, the way I work in Houdini / Photoshop / AfterEffects...
 
@@ -35,10 +35,10 @@ _Eli Mellen:_ A lot of what I do isn’t big project based work, it tends to be 
 
 _Guyren Howe:_ A great deal more business logic can be expressed in First Order Logic than usually is. The relational model shows us how to make FOL inference straightforward and predictable. Therefore, we should implement much more of our apps in a relational system.
 
-_Ivan Reese:_ 
+_Ivan Reese:_  I have different answers for each project I'm involved with:
 * At Ink & Switch: I've never seen software that echoes the pleasing feeling of scribbling on paper — especially not software for programming.
 * Hest (editorialized by Kartik based on [Hest podcast #40](https://ivanish.ca/hest-podcast)): A programming environment that feels less solipsistic, like it has an existence independent of the programmer(s).
-* My personal website, the Hest podcast, the FoC podcast: Too often, the way we share our ideas feels like slowly letting stale air out of a balloon. 
+* My personal website, the Hest podcast, the FoC podcast: Too often, the way we share our ideas feels like slowly letting stale air out of a balloon.
 
 _Jason Morris:_ The world runs on rules. Rules can be made computable (without translating them into objects or functions or processes) but it's unnecessarily hard to do. If it was easy, people who understand rules could build software that understands them too, people with problems could get cheap and reliable help, asymmetry of information would be reduced, and the world would be more just.
 
@@ -54,13 +54,13 @@ _Kartik Agaram:_ Adapting computers to ourselves is hard.
 
 _Konrad Hinsen:_ Agency over information processing systems is too centralized. Too many people have to adapt to someone else's systems, rather than adapting their own system to their own wishes.
 
-_Mark Dewing:_ Understanding software (program comprehension) is difficult. I'm interested in ways to make it easier to understand what a program does and how it works. By doing so, one can more quickly and more confidently make changes to a program. There is a part of the solution space that involves a progression from simplicity to complexity. Such as tutorials, build-your-own-X, proxy apps, extracting kernels, etc. Are there ways to make these easier to write or better connect them to the actual code. 
+_Mark Dewing:_ Understanding software (program comprehension) is difficult. I'm interested in ways to make it easier to understand what a program does and how it works. By doing so, one can more quickly and more confidently make changes to a program. There is a part of the solution space that involves a progression from simplicity to complexity. Such as tutorials, build-your-own-X, proxy apps, extracting kernels, etc. Are there ways to make these easier to write or better connect them to the actual code.
 
 _Nilesh Trivedi:_ Malleability via abstraction for me. I have found programming to be joyful when done in an elegant domain-specific language. The absolute opposite of "ad-hoc". I hope today's LLM-generating walls of unmaintainable code is NOT the future of coding.
 
 _Paul Tarvydas:_ Programming is too hard due to the mistaken fundamental assumption that CPUs are like functions. This mistaken assumption originated around 1954. Future of Coding projects implemented using computers, would progress much more quickly if we thought about CPUs as CPUs instead of as functions. I poke, randomly, at a variety of ways of thinking about programming and try to show that many ideas are 10x easier than can be imagined when using /only/ the function-based paradigm.For example, DPLs (Diagrammatic Programming Languages) and multi-tasking.
 
-_Shalabh:_ Software is trapped in silos (apps) and can't be recomposed. Imagine a world where pencils only work on notepads from the same manufacturer. Where you can draw only certain words and shapes that the notepad had been designed for. Where collages and inter-manufacturer paper-pencil integrations require upfront agreement and engineering between all involved parties. This is the digital world of today. I want a software medium where I can easily compose any artifacts, without requiring heavy upfront integration. Where I can slice, copy, paste, share, decompose, inspect the provenance and generally engage with all artifacts in a uniform way. I want a collaborative, dynamic medium which also happens to be programmable. 
+_Shalabh:_ Software is trapped in silos (apps) and can't be recomposed. Imagine a world where pencils only work on notepads from the same manufacturer. Where you can draw only certain words and shapes that the notepad had been designed for. Where collages and inter-manufacturer paper-pencil integrations require upfront agreement and engineering between all involved parties. This is the digital world of today. I want a software medium where I can easily compose any artifacts, without requiring heavy upfront integration. Where I can slice, copy, paste, share, decompose, inspect the provenance and generally engage with all artifacts in a uniform way. I want a collaborative, dynamic medium which also happens to be programmable.
 
 _Stefan Lesser:_ These are the big picture problems that motivate me:
 * We design generic and universal solutions that scale, instead of specific and contextual solutions that fit.
