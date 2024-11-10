@@ -85,4 +85,4 @@ At some point we'd like to repeat this exercise for solutions rather than proble
 
 ## Resources
 
-Primary sources from Aug 2024 (though currently missing images and other attachments): [1](https://akkartik.name/archives/foc/thinking-together/1722547627.788149.html), [2](https://akkartik.name/archives/foc/thinking-together/1722660123.009799.html), [3](https://akkartik.name/archives/foc/thinking-together/1724009682.290899.html)
+Primary sources from Aug 2024 (though currently missing images and other attachments): [1](https://akkartik.name/archives/foc/thinking-together/1722547627.788149.html), [2](https://akkartik.name/archives/foc/thinking-together/1722660123.009799.html), [3](https://akkartik.name/archives/foc/thinking-together/1722795835.688829.html), [4](https://akkartik.name/archives/foc/thinking-together/1724009682.290899.html)
