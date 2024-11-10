@@ -1,0 +1,663 @@
+<html><head>
+<!-- based on https://cristobal.space/note
+     https://twitter.com/tobyshooters/status/1761929103664427115 -->
+<title>Finding our Neighbors, Step 2</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: monospace;
+      width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Finding our Neighbors, Step 2</h2>
+
+<a href="https://futureofcoding.slack.com/archives/C5T9GPWFL/p1722547627788149">Thread of problem statements</a>
+
+<p>
+If you haven't yet, first contribute a problem statement.
+
+</p><p>
+Read the problem statements of others and comment on <a href="">the
+voting thread</a> with a number from 1 to 6 for every other person's problem
+statement. This table will eventually summarize the results.
+
+</p><p>
+Here's the rubric for the numeric scale:
+</p><ul>
+<li>0: This is my problem statement.
+</li><li>1: This is a rewording of my problem statement.
+</li><li>2: This overlaps almost entirely with my problem statement.
+</li><li>3: I care about this problem.
+</li><li>4: This doesn't seem like a big problem.
+</li><li>5: This is fine, I don't think it is a problem.
+</li><li>6: This statement is alien to me, I don't understand it.
+
+</li></ul>
+
+<p>
+Alternatively, download and fill in your row in this html page, then click
+<button onclick="save()"><i>SAVE</i></button> to download a local copy. Then
+share it on the voting thread. This is optional, though. This janky table will
+need a large screen to comfortably fill in.
+
+<style>
+table textarea { height:auto; }
+tr:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(150, 212, 212, 0.4);
+}
+</style>
+
+</p><hr>
+<table>
+  <tbody><tr>
+    <th></th>
+    <th>Ivan Reese</th>
+    <th>Arvind Thyagarajan</th>
+    <th>Jasmine Otto</th>
+    <th>Jimmy Miller</th>
+    <th>Kartik Agaram</th>
+    <th>avon</th>
+    <th>Eli Mellen</th>
+    <th>Paul Tarvydas</th>
+    <th>Konrad Hinsen</th>
+    <th>Tom Larkworthy</th>
+    <th>Dany</th>
+    <th>Nilesh Trivedi</th>
+    <th>Beni Cherniavsky-Paskin</th>
+    <th>Jason Morris</th>
+    <th>Guyren Howe</th>
+    <th>Duncan Cragg</th>
+    <th>John Christensen</th>
+    <th>Stefan Lesser</th>
+    <th>Mark Dewing</th>
+    <th>Jonathan Edwards</th>
+    <th>Dennis Hansen</th>
+    <th>Shalabh</th>
+    <th></th>
+  </tr>
+  <tr>
+    <th>Ivan Reese</th>
+    <td><textarea rows="1" cols="1">1</textarea></td>
+    <td><textarea rows="1" cols="1" style="width: 38px; height: 27px;">3.5</textarea></td>
+    <td><textarea rows="1" cols="1" style="width: 40px; height: 30px;">2.5</textarea></td>
+    <td><textarea rows="1" cols="1">1</textarea></td>
+    <td><textarea rows="1" cols="1">1-5</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">0.9</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">4i</textarea></td>
+    <td><textarea rows="1" cols="1">1 + &lt;3</textarea></td>
+    <td><textarea rows="1" cols="1">5?</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">&gt;6</textarea></td>
+    <td><textarea rows="1" cols="1">6.0</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Arvind Thyagarajan</th>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Jasmine Otto</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Jimmy Miller</th>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Kartik Agaram</th>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">1</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+  </tr>
+  <tr>
+    <th>avon</th>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Eli Mellen</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Paul Tarvydas</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Konrad Hinsen</th>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Tom Larkworthy</th>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">1</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">1</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Dany</th>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">1</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">6</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Nilesh Trivedi</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Beni Cherniavsky-Paskin</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Jason Morris</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Guyren Howe</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Duncan Cragg</th>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>John Christensen</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Stefan Lesser</th>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">5</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">4</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td><textarea rows="1" cols="1">2</textarea></td>
+    <td><textarea rows="1" cols="1">3</textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Mark Dewing</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Jonathan Edwards</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Dennis Hansen</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+  </tr>
+  <tr>
+    <th>Shalabh</th>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td><textarea rows="1" cols="1"></textarea></td>
+    <td>0</td>
+  </tr>
+</tbody></table>
+
+<p>
+<button onclick="save()"><i>SAVE</i></button>
+
+<script>
+  const save = () => {
+    // Save textarea contents into html
+    var textAreas = document.getElementsByTagName('textarea');
+    for (i = 0; i < textAreas.length; i++) {
+      textAreas[i].innerHTML = textAreas[i].value;
+    }
+    // Write data into self-contained html file
+    const data = new Blob([document.documentElement.outerHTML], {type: 'text/plain'});
+
+    // Download the file
+    const url = window.URL.createObjectURL(data);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "problems.html";
+    a.click();
+  }
+
+</script>
+
+</p>
+
+</body></html>
